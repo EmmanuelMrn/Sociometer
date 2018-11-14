@@ -1,0 +1,1169 @@
+Archive member included because of file (symbol)
+
+libUSB_Serial.a(USB_Serial.o)
+                              comunicacion.o (USB_SerialRx)
+libUSB_Serial.a(USBController_AVR8.o)
+                              libUSB_Serial.a(USB_Serial.o) (USB_Init)
+libUSB_Serial.a(USBInterrupt_AVR8.o)
+                              libUSB_Serial.a(USBController_AVR8.o) (USB_INT_DisableAllInterrupts)
+libUSB_Serial.a(DeviceStandardReq.o)
+                              libUSB_Serial.a(USBController_AVR8.o) (USB_Device_CurrentlySelfPowered)
+libUSB_Serial.a(Events.o)     libUSB_Serial.a(USBInterrupt_AVR8.o) (EVENT_USB_Device_Suspend)
+libUSB_Serial.a(USBTask.o)    libUSB_Serial.a(USB_Serial.o) (USB_USBTask)
+libUSB_Serial.a(CDCClassDevice.o)
+                              libUSB_Serial.a(USB_Serial.o) (CDC_Device_ReceiveByte)
+libUSB_Serial.a(Descriptors.o)
+                              libUSB_Serial.a(DeviceStandardReq.o) (CALLBACK_USB_GetDescriptor)
+libUSB_Serial.a(Endpoint_AVR8.o)
+                              libUSB_Serial.a(USBController_AVR8.o) (Endpoint_ConfigureEndpoint_Prv)
+libUSB_Serial.a(EndpointStream_AVR8.o)
+                              libUSB_Serial.a(DeviceStandardReq.o) (Endpoint_Write_Control_Stream_LE)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
+                              reloj.o (__udivmodqi4)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                              comunicacion.o (__udivmodhi4)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o (exit)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                              main.o (__do_copy_data)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                              main.o (__do_clear_bss)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega32u4.o)
+                              libUSB_Serial.a(EndpointStream_AVR8.o) (__eerd_byte_m32u4)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eeupd_byte_atmega32u4.o)
+                              libUSB_Serial.a(EndpointStream_AVR8.o) (__eeupd_byte_m32u4)
+
+Allocating common symbols
+Common symbol       size              file
+
+horas               0x1               reloj.o
+USB_IsInitialized   0x1               libUSB_Serial.a(USBTask.o)
+seg                 0x1               reloj.o
+USB_DeviceState     0x1               libUSB_Serial.a(USBTask.o)
+USB_Device_ConfigurationNumber
+                    0x1               libUSB_Serial.a(DeviceStandardReq.o)
+dato                0x1               main.o
+USB_Device_CurrentlySelfPowered
+                    0x1               libUSB_Serial.a(DeviceStandardReq.o)
+USB_ControlRequest  0x8               libUSB_Serial.a(USBTask.o)
+min                 0x1               reloj.o
+USB_Device_RemoteWakeupEnabled
+                    0x1               libUSB_Serial.a(DeviceStandardReq.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+LOAD main.o
+LOAD delay.o
+LOAD comunicacion.o
+LOAD reloj.o
+LOAD Timer0.o
+LOAD Timer1.o
+LOAD uart.o
+LOAD eeprom.o
+LOAD libUSB_Serial.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000     0x2302
+ *(.vectors)
+ .vectors       0x00000000       0xac c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+ .progmem.data  0x000000ac       0x8c libUSB_Serial.a(Descriptors.o)
+                0x00000100                ManufacturerString
+                0x000000fc                LanguageString
+                0x000000ac                DeviceDescriptor
+                0x0000011a                ProductString
+                0x000000be                ConfigurationDescriptor
+                0x00000138                . = ALIGN (0x2)
+                0x00000138                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x00000138        0x0 linker stubs
+ *(.trampolines*)
+                0x00000138                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x00000138                __ctors_start = .
+ *(.ctors)
+                0x00000138                __ctors_end = .
+                0x00000138                __dtors_start = .
+ *(.dtors)
+                0x00000138                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x00000138        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+                0x00000138                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x00000138        0xc c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000144       0x16 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                0x00000144                __do_copy_data
+ .init4         0x0000015a       0x10 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                0x0000015a                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x0000016a        0x8 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+ *(.init9)
+ *(.text)
+ .text          0x00000172        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+                0x00000172                __vector_38
+                0x00000172                __vector_22
+                0x00000172                __vector_28
+                0x00000172                __vector_1
+                0x00000172                __vector_32
+                0x00000172                __vector_34
+                0x00000172                __vector_24
+                0x00000172                __vector_12
+                0x00000172                __bad_interrupt
+                0x00000172                __vector_6
+                0x00000172                __vector_31
+                0x00000172                __vector_35
+                0x00000172                __vector_39
+                0x00000172                __vector_3
+                0x00000172                __vector_23
+                0x00000172                __vector_30
+                0x00000172                __vector_25
+                0x00000172                __vector_11
+                0x00000172                __vector_13
+                0x00000172                __vector_17
+                0x00000172                __vector_19
+                0x00000172                __vector_7
+                0x00000172                __vector_41
+                0x00000172                __vector_27
+                0x00000172                __vector_5
+                0x00000172                __vector_33
+                0x00000172                __vector_37
+                0x00000172                __vector_4
+                0x00000172                __vector_9
+                0x00000172                __vector_2
+                0x00000172                __vector_15
+                0x00000172                __vector_36
+                0x00000172                __vector_29
+                0x00000172                __vector_40
+                0x00000172                __vector_8
+                0x00000172                __vector_26
+                0x00000172                __vector_14
+                0x00000172                __vector_16
+                0x00000172                __vector_18
+                0x00000172                __vector_20
+                0x00000172                __vector_42
+ .text          0x00000176       0x6e main.o
+                0x00000176                main
+ .text          0x000001e4       0xc6 delay.o
+                0x000001e4                delay
+                0x0000023a                delay1seg
+ .text          0x000002aa      0x17e comunicacion.o
+                0x000003cc                USB_TX
+                0x000003c6                updateUSB
+                0x000002aa                itoa
+                0x000003d6                USB_Rx
+                0x0000040e                USB_getsRX
+                0x000003a8                USB_putsTX
+                0x00000348                atoi
+ .text          0x00000428       0x96 reloj.o
+                0x00000492                Clock_Display
+                0x00000428                Clock_Init
+                0x0000046e                PrintDec2d
+                0x00000436                Clock_Update
+ .text          0x000004be       0x82 Timer0.o
+                0x000004d4                __vector_21
+                0x000004be                Timer0_Init
+ .text          0x00000540       0x2a Timer1.o
+                0x00000540                Timer1_Init
+ .text          0x0000056a       0x46 uart.o
+                0x0000056a                USART_Init
+                0x00000592                USART_Transmit
+                0x000005a2                USART_Receive
+ .text          0x000005b0       0x1e eeprom.o
+                0x000005c0                EEPROM_read
+                0x000005b0                EEPROM_write
+ .text          0x000005ce        0x0 libUSB_Serial.a(USB_Serial.o)
+ .text          0x000005ce        0x0 libUSB_Serial.a(USBController_AVR8.o)
+ .text          0x000005ce        0x0 libUSB_Serial.a(USBInterrupt_AVR8.o)
+ .text          0x000005ce        0x0 libUSB_Serial.a(DeviceStandardReq.o)
+ .text          0x000005ce        0x0 libUSB_Serial.a(Events.o)
+ .text          0x000005ce        0x0 libUSB_Serial.a(USBTask.o)
+ .text          0x000005ce        0x0 libUSB_Serial.a(CDCClassDevice.o)
+ .text          0x000005ce        0x0 libUSB_Serial.a(Descriptors.o)
+ .text          0x000005ce        0x0 libUSB_Serial.a(Endpoint_AVR8.o)
+ .text          0x000005ce        0x0 libUSB_Serial.a(EndpointStream_AVR8.o)
+ .text          0x000005ce        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
+ .text          0x000005ce        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .text          0x000005ce        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text          0x000005ce        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text          0x000005ce        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text          0x000005ce        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega32u4.o)
+ .text          0x000005ce        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eeupd_byte_atmega32u4.o)
+                0x000005ce                . = ALIGN (0x2)
+ *(.text.*)
+ .text.EVENT_USB_Device_Connect
+                0x000005ce        0x2 libUSB_Serial.a(USB_Serial.o)
+                0x000005ce                EVENT_USB_Device_Connect
+ .text.EVENT_USB_Device_Disconnect
+                0x000005d0        0x2 libUSB_Serial.a(USB_Serial.o)
+                0x000005d0                EVENT_USB_Device_Disconnect
+ .text.USB_SerialRx
+                0x000005d2       0x20 libUSB_Serial.a(USB_Serial.o)
+                0x000005d2                USB_SerialRx
+ .text.USB_SerialTx
+                0x000005f2        0xc libUSB_Serial.a(USB_Serial.o)
+                0x000005f2                USB_SerialTx
+ .text.EVENT_USB_Device_ControlRequest
+                0x000005fe        0xa libUSB_Serial.a(USB_Serial.o)
+                0x000005fe                EVENT_USB_Device_ControlRequest
+ .text.EVENT_USB_Device_ConfigurationChanged
+                0x00000608        0xa libUSB_Serial.a(USB_Serial.o)
+                0x00000608                EVENT_USB_Device_ConfigurationChanged
+ .text.SetupHardware
+                0x00000612       0x30 libUSB_Serial.a(USB_Serial.o)
+                0x00000612                SetupHardware
+ .text.USB_SerialInit
+                0x00000642        0x6 libUSB_Serial.a(USB_Serial.o)
+                0x00000642                USB_SerialInit
+ .text.USB_SerialUpdate
+                0x00000648        0xe libUSB_Serial.a(USB_Serial.o)
+                0x00000648                USB_SerialUpdate
+ .text.USB_Disable
+                0x00000656       0x34 libUSB_Serial.a(USBController_AVR8.o)
+                0x00000656                USB_Disable
+ .text.USB_ResetInterface
+                0x0000068a       0x8e libUSB_Serial.a(USBController_AVR8.o)
+                0x0000068a                USB_ResetInterface
+ .text.USB_Init
+                0x00000718       0x1a libUSB_Serial.a(USBController_AVR8.o)
+                0x00000718                USB_Init
+ .text.USB_INT_DisableAllInterrupts
+                0x00000732       0x10 libUSB_Serial.a(USBInterrupt_AVR8.o)
+                0x00000732                USB_INT_DisableAllInterrupts
+ .text.USB_INT_ClearAllInterrupts
+                0x00000742        0xa libUSB_Serial.a(USBInterrupt_AVR8.o)
+                0x00000742                USB_INT_ClearAllInterrupts
+ .text.__vector_10
+                0x0000074c      0x192 libUSB_Serial.a(USBInterrupt_AVR8.o)
+                0x0000074c                __vector_10
+ .text.USB_Device_ProcessControlRequest
+                0x000008de      0x2e6 libUSB_Serial.a(DeviceStandardReq.o)
+                0x000008de                USB_Device_ProcessControlRequest
+ .text.USB_Event_Stub
+                0x00000bc4        0x2 libUSB_Serial.a(Events.o)
+                0x00000bc4                EVENT_USB_Device_WakeUp
+                0x00000bc4                USB_Event_Stub
+                0x00000bc4                EVENT_USB_Device_Suspend
+                0x00000bc4                EVENT_USB_Device_StartOfFrame
+                0x00000bc4                EVENT_USB_Device_Reset
+ .text.USB_USBTask
+                0x00000bc6       0x28 libUSB_Serial.a(USBTask.o)
+                0x00000bc6                USB_USBTask
+ .text.CDC_Device_BytesReceived
+                0x00000bee       0x68 libUSB_Serial.a(CDCClassDevice.o)
+                0x00000bee                CDC_Device_BytesReceived
+ .text.CDC_Device_ReceiveByte
+                0x00000c56       0x76 libUSB_Serial.a(CDCClassDevice.o)
+                0x00000c56                CDC_Device_ReceiveByte
+ .text.CDC_Device_CreateStream
+                0x00000ccc       0x26 libUSB_Serial.a(CDCClassDevice.o)
+                0x00000ccc                CDC_Device_CreateStream
+ .text.CDC_Device_CreateBlockingStream
+                0x00000cf2       0x26 libUSB_Serial.a(CDCClassDevice.o)
+                0x00000cf2                CDC_Device_CreateBlockingStream
+ .text.CDC_Device_getchar
+                0x00000d18       0x18 libUSB_Serial.a(CDCClassDevice.o)
+ .text.CDC_Device_Event_Stub
+                0x00000d30        0x2 libUSB_Serial.a(CDCClassDevice.o)
+                0x00000d30                EVENT_CDC_Device_LineEncodingChanged
+                0x00000d30                EVENT_CDC_Device_ControLineStateChanged
+                0x00000d30                EVENT_CDC_Device_BreakSent
+                0x00000d30                CDC_Device_Event_Stub
+ .text.CDC_Device_SendControlLineStateChange
+                0x00000d32       0x8c libUSB_Serial.a(CDCClassDevice.o)
+                0x00000d32                CDC_Device_SendControlLineStateChange
+ .text.CDC_Device_SendData
+                0x00000dbe       0x32 libUSB_Serial.a(CDCClassDevice.o)
+                0x00000dbe                CDC_Device_SendData
+ .text.CDC_Device_Flush
+                0x00000df0       0x68 libUSB_Serial.a(CDCClassDevice.o)
+                0x00000df0                CDC_Device_Flush
+ .text.CDC_Device_USBTask
+                0x00000e58       0x22 libUSB_Serial.a(CDCClassDevice.o)
+                0x00000e58                CDC_Device_USBTask
+ .text.CDC_Device_getchar_Blocking
+                0x00000e7a       0x38 libUSB_Serial.a(CDCClassDevice.o)
+ .text.CDC_Device_SendByte
+                0x00000eb2       0x4c libUSB_Serial.a(CDCClassDevice.o)
+                0x00000eb2                CDC_Device_SendByte
+ .text.CDC_Device_putchar
+                0x00000efe       0x20 libUSB_Serial.a(CDCClassDevice.o)
+ .text.CDC_Device_SendString
+                0x00000f1e       0x40 libUSB_Serial.a(CDCClassDevice.o)
+                0x00000f1e                CDC_Device_SendString
+ .text.CDC_Device_ConfigureEndpoints
+                0x00000f5e       0xa2 libUSB_Serial.a(CDCClassDevice.o)
+                0x00000f5e                CDC_Device_ConfigureEndpoints
+ .text.CDC_Device_ProcessControlRequest
+                0x00001000      0x15c libUSB_Serial.a(CDCClassDevice.o)
+                0x00001000                CDC_Device_ProcessControlRequest
+ .text.CALLBACK_USB_GetDescriptor
+                0x0000115c       0x5c libUSB_Serial.a(Descriptors.o)
+                0x0000115c                CALLBACK_USB_GetDescriptor
+ .text.Endpoint_ConfigureEndpoint_Prv
+                0x000011b8       0x6a libUSB_Serial.a(Endpoint_AVR8.o)
+                0x000011b8                Endpoint_ConfigureEndpoint_Prv
+ .text.Endpoint_ClearEndpoints
+                0x00001222       0x28 libUSB_Serial.a(Endpoint_AVR8.o)
+                0x00001222                Endpoint_ClearEndpoints
+ .text.Endpoint_ClearStatusStage
+                0x0000124a       0x42 libUSB_Serial.a(Endpoint_AVR8.o)
+                0x0000124a                Endpoint_ClearStatusStage
+ .text.Endpoint_WaitUntilReady
+                0x0000128c       0x64 libUSB_Serial.a(Endpoint_AVR8.o)
+                0x0000128c                Endpoint_WaitUntilReady
+ .text.Endpoint_Write_Control_Stream_LE
+                0x000012f0       0xcc libUSB_Serial.a(EndpointStream_AVR8.o)
+                0x000012f0                Endpoint_Write_Control_Stream_LE
+ .text.Endpoint_Write_Control_Stream_BE
+                0x000013bc       0xd4 libUSB_Serial.a(EndpointStream_AVR8.o)
+                0x000013bc                Endpoint_Write_Control_Stream_BE
+ .text.Endpoint_Read_Control_Stream_LE
+                0x00001490       0x8c libUSB_Serial.a(EndpointStream_AVR8.o)
+                0x00001490                Endpoint_Read_Control_Stream_LE
+ .text.Endpoint_Read_Control_Stream_BE
+                0x0000151c       0x9c libUSB_Serial.a(EndpointStream_AVR8.o)
+                0x0000151c                Endpoint_Read_Control_Stream_BE
+ .text.Endpoint_Write_Control_PStream_LE
+                0x000015b8       0xd0 libUSB_Serial.a(EndpointStream_AVR8.o)
+                0x000015b8                Endpoint_Write_Control_PStream_LE
+ .text.Endpoint_Write_Control_PStream_BE
+                0x00001688       0xd6 libUSB_Serial.a(EndpointStream_AVR8.o)
+                0x00001688                Endpoint_Write_Control_PStream_BE
+ .text.Endpoint_Read_Control_EStream_BE
+                0x0000175e       0xc2 libUSB_Serial.a(EndpointStream_AVR8.o)
+                0x0000175e                Endpoint_Read_Control_EStream_BE
+ .text.Endpoint_Read_Control_EStream_LE
+                0x00001820       0xb0 libUSB_Serial.a(EndpointStream_AVR8.o)
+                0x00001820                Endpoint_Read_Control_EStream_LE
+ .text.Endpoint_Write_Control_EStream_BE
+                0x000018d0       0xfe libUSB_Serial.a(EndpointStream_AVR8.o)
+                0x000018d0                Endpoint_Write_Control_EStream_BE
+ .text.Endpoint_Write_Control_EStream_LE
+                0x000019ce       0xf4 libUSB_Serial.a(EndpointStream_AVR8.o)
+                0x000019ce                Endpoint_Write_Control_EStream_LE
+ .text.Endpoint_Null_Stream
+                0x00001ac2       0x88 libUSB_Serial.a(EndpointStream_AVR8.o)
+                0x00001ac2                Endpoint_Null_Stream
+ .text.Endpoint_Discard_Stream
+                0x00001b4a       0x88 libUSB_Serial.a(EndpointStream_AVR8.o)
+                0x00001b4a                Endpoint_Discard_Stream
+ .text.Endpoint_Read_EStream_BE
+                0x00001bd2       0xac libUSB_Serial.a(EndpointStream_AVR8.o)
+                0x00001bd2                Endpoint_Read_EStream_BE
+ .text.Endpoint_Read_EStream_LE
+                0x00001c7e       0xb0 libUSB_Serial.a(EndpointStream_AVR8.o)
+                0x00001c7e                Endpoint_Read_EStream_LE
+ .text.Endpoint_Write_EStream_BE
+                0x00001d2e       0xac libUSB_Serial.a(EndpointStream_AVR8.o)
+                0x00001d2e                Endpoint_Write_EStream_BE
+ .text.Endpoint_Write_EStream_LE
+                0x00001dda       0xb0 libUSB_Serial.a(EndpointStream_AVR8.o)
+                0x00001dda                Endpoint_Write_EStream_LE
+ .text.Endpoint_Write_PStream_BE
+                0x00001e8a       0xaa libUSB_Serial.a(EndpointStream_AVR8.o)
+                0x00001e8a                Endpoint_Write_PStream_BE
+ .text.Endpoint_Write_PStream_LE
+                0x00001f34       0xae libUSB_Serial.a(EndpointStream_AVR8.o)
+                0x00001f34                Endpoint_Write_PStream_LE
+ .text.Endpoint_Read_Stream_BE
+                0x00001fe2       0xaa libUSB_Serial.a(EndpointStream_AVR8.o)
+                0x00001fe2                Endpoint_Read_Stream_BE
+ .text.Endpoint_Read_Stream_LE
+                0x0000208c       0xaa libUSB_Serial.a(EndpointStream_AVR8.o)
+                0x0000208c                Endpoint_Read_Stream_LE
+ .text.Endpoint_Write_Stream_BE
+                0x00002136       0xaa libUSB_Serial.a(EndpointStream_AVR8.o)
+                0x00002136                Endpoint_Write_Stream_BE
+ .text.Endpoint_Write_Stream_LE
+                0x000021e0       0xaa libUSB_Serial.a(EndpointStream_AVR8.o)
+                0x000021e0                Endpoint_Write_Stream_LE
+ .text.libgcc   0x0000228a       0x18 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
+                0x0000228a                __udivmodqi4
+ .text.libgcc   0x000022a2       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                0x000022a2                __udivmodhi4
+ .text.libgcc   0x000022ca        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x000022ca        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x000022ca        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text.avr-libc
+                0x000022ca       0x10 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega32u4.o)
+                0x000022ca                __eerd_byte_m32u4
+ .text.avr-libc
+                0x000022da       0x24 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eeupd_byte_atmega32u4.o)
+                0x000022da                __eeupd_byte_m32u4
+                0x000022dc                __eeupd_r18_m32u4
+                0x000022fe                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x000022fe        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x000022fe                exit
+                0x000022fe                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x000022fe        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00002302                _etext = .
+
+.data           0x00800100       0x26 load address 0x00002302
+                0x00800100                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800100        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+ .data          0x00800100        0x6 main.o
+ .data          0x00800106        0x0 delay.o
+ .data          0x00800106        0x0 comunicacion.o
+ .data          0x00800106        0x0 reloj.o
+ .data          0x00800106        0x0 Timer0.o
+ .data          0x00800106        0x0 Timer1.o
+ .data          0x00800106        0x0 uart.o
+ .data          0x00800106        0x0 eeprom.o
+ .data          0x00800106       0x18 libUSB_Serial.a(USB_Serial.o)
+                0x00800106                VirtualSerial_CDC_Interface
+ .data          0x0080011e        0x0 libUSB_Serial.a(USBController_AVR8.o)
+ .data          0x0080011e        0x0 libUSB_Serial.a(USBInterrupt_AVR8.o)
+ .data          0x0080011e        0x0 libUSB_Serial.a(DeviceStandardReq.o)
+ .data          0x0080011e        0x0 libUSB_Serial.a(Events.o)
+ .data          0x0080011e        0x0 libUSB_Serial.a(USBTask.o)
+ .data          0x0080011e        0x8 libUSB_Serial.a(CDCClassDevice.o)
+ .data          0x00800126        0x0 libUSB_Serial.a(Descriptors.o)
+ .data          0x00800126        0x0 libUSB_Serial.a(Endpoint_AVR8.o)
+ .data          0x00800126        0x0 libUSB_Serial.a(EndpointStream_AVR8.o)
+ .data          0x00800126        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
+ .data          0x00800126        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .data          0x00800126        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .data          0x00800126        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .data          0x00800126        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .data          0x00800126        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega32u4.o)
+ .data          0x00800126        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eeupd_byte_atmega32u4.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x00800126                . = ALIGN (0x2)
+                0x00800126                _edata = .
+                0x00800126                PROVIDE (__data_end, .)
+
+.bss            0x00800126       0x13
+                0x00800126                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x00800126        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+ .bss           0x00800126        0x0 main.o
+ .bss           0x00800126        0x0 delay.o
+ .bss           0x00800126        0x0 comunicacion.o
+ .bss           0x00800126        0x0 reloj.o
+ .bss           0x00800126        0x2 Timer0.o
+ .bss           0x00800128        0x0 Timer1.o
+ .bss           0x00800128        0x0 uart.o
+ .bss           0x00800128        0x0 eeprom.o
+ .bss           0x00800128        0x0 libUSB_Serial.a(USB_Serial.o)
+ .bss           0x00800128        0x0 libUSB_Serial.a(USBController_AVR8.o)
+ .bss           0x00800128        0x0 libUSB_Serial.a(USBInterrupt_AVR8.o)
+ .bss           0x00800128        0x0 libUSB_Serial.a(DeviceStandardReq.o)
+ .bss           0x00800128        0x0 libUSB_Serial.a(Events.o)
+ .bss           0x00800128        0x0 libUSB_Serial.a(USBTask.o)
+ .bss           0x00800128        0x0 libUSB_Serial.a(CDCClassDevice.o)
+ .bss           0x00800128        0x0 libUSB_Serial.a(Descriptors.o)
+ .bss           0x00800128        0x0 libUSB_Serial.a(Endpoint_AVR8.o)
+ .bss           0x00800128        0x0 libUSB_Serial.a(EndpointStream_AVR8.o)
+ .bss           0x00800128        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
+ .bss           0x00800128        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .bss           0x00800128        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .bss           0x00800128        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .bss           0x00800128        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x00800128        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega32u4.o)
+ .bss           0x00800128        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eeupd_byte_atmega32u4.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x00800128        0x1 main.o
+                0x00800128                dato
+ COMMON         0x00800129        0x3 reloj.o
+                0x00800129                horas
+                0x0080012a                seg
+                0x0080012b                min
+ COMMON         0x0080012c        0x3 libUSB_Serial.a(DeviceStandardReq.o)
+                0x0080012c                USB_Device_ConfigurationNumber
+                0x0080012d                USB_Device_CurrentlySelfPowered
+                0x0080012e                USB_Device_RemoteWakeupEnabled
+ COMMON         0x0080012f        0xa libUSB_Serial.a(USBTask.o)
+                0x0080012f                USB_IsInitialized
+                0x00800130                USB_DeviceState
+                0x00800131                USB_ControlRequest
+                0x00800139                PROVIDE (__bss_end, .)
+                0x00002302                __data_load_start = LOADADDR (.data)
+                0x00002328                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x00800139        0x0
+                0x00800139                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x00800139                PROVIDE (__noinit_end, .)
+                0x00800139                _end = .
+                0x00800139                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x3d8
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 main.o
+ .debug_aranges
+                0x00000020       0x20 delay.o
+ .debug_aranges
+                0x00000040       0x20 comunicacion.o
+ .debug_aranges
+                0x00000060       0x20 reloj.o
+ .debug_aranges
+                0x00000080       0x20 Timer0.o
+ .debug_aranges
+                0x000000a0       0x20 Timer1.o
+ .debug_aranges
+                0x000000c0       0x20 uart.o
+ .debug_aranges
+                0x000000e0       0x20 eeprom.o
+ .debug_aranges
+                0x00000100       0x60 libUSB_Serial.a(USB_Serial.o)
+ .debug_aranges
+                0x00000160       0x30 libUSB_Serial.a(USBController_AVR8.o)
+ .debug_aranges
+                0x00000190       0x30 libUSB_Serial.a(USBInterrupt_AVR8.o)
+ .debug_aranges
+                0x000001c0       0x20 libUSB_Serial.a(DeviceStandardReq.o)
+ .debug_aranges
+                0x000001e0       0x20 libUSB_Serial.a(Events.o)
+ .debug_aranges
+                0x00000200       0x20 libUSB_Serial.a(USBTask.o)
+ .debug_aranges
+                0x00000220       0x98 libUSB_Serial.a(CDCClassDevice.o)
+ .debug_aranges
+                0x000002b8       0x20 libUSB_Serial.a(Descriptors.o)
+ .debug_aranges
+                0x000002d8       0x38 libUSB_Serial.a(Endpoint_AVR8.o)
+ .debug_aranges
+                0x00000310       0xc8 libUSB_Serial.a(EndpointStream_AVR8.o)
+
+.debug_pubnames
+                0x00000000      0xa6b
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0x24 main.o
+ .debug_pubnames
+                0x00000024       0x2a delay.o
+ .debug_pubnames
+                0x0000004e       0x66 comunicacion.o
+ .debug_pubnames
+                0x000000b4       0x6d reloj.o
+ .debug_pubnames
+                0x00000121       0x32 Timer0.o
+ .debug_pubnames
+                0x00000153       0x22 Timer1.o
+ .debug_pubnames
+                0x00000175       0x46 uart.o
+ .debug_pubnames
+                0x000001bb       0x33 eeprom.o
+ .debug_pubnames
+                0x000001ee      0x119 libUSB_Serial.a(USB_Serial.o)
+ .debug_pubnames
+                0x00000307       0x46 libUSB_Serial.a(USBController_AVR8.o)
+ .debug_pubnames
+                0x0000034d       0x62 libUSB_Serial.a(USBInterrupt_AVR8.o)
+ .debug_pubnames
+                0x000003af       0xa1 libUSB_Serial.a(DeviceStandardReq.o)
+ .debug_pubnames
+                0x00000450       0x25 libUSB_Serial.a(Events.o)
+ .debug_pubnames
+                0x00000475       0x63 libUSB_Serial.a(USBTask.o)
+ .debug_pubnames
+                0x000004d8      0x18b libUSB_Serial.a(CDCClassDevice.o)
+ .debug_pubnames
+                0x00000663       0x9e libUSB_Serial.a(Descriptors.o)
+ .debug_pubnames
+                0x00000701       0x8b libUSB_Serial.a(Endpoint_AVR8.o)
+ .debug_pubnames
+                0x0000078c      0x2df libUSB_Serial.a(EndpointStream_AVR8.o)
+
+.debug_info     0x00000000     0x4f64
+ *(.debug_info)
+ .debug_info    0x00000000       0x9f main.o
+ .debug_info    0x0000009f       0xb4 delay.o
+ .debug_info    0x00000153      0x25e comunicacion.o
+ .debug_info    0x000003b1      0x12f reloj.o
+ .debug_info    0x000004e0       0xc2 Timer0.o
+ .debug_info    0x000005a2       0x72 Timer1.o
+ .debug_info    0x00000614       0xb2 uart.o
+ .debug_info    0x000006c6       0xbe eeprom.o
+ .debug_info    0x00000784      0x3cc libUSB_Serial.a(USB_Serial.o)
+ .debug_info    0x00000b50      0x496 libUSB_Serial.a(USBController_AVR8.o)
+ .debug_info    0x00000fe6      0x56d libUSB_Serial.a(USBInterrupt_AVR8.o)
+ .debug_info    0x00001553      0x9ed libUSB_Serial.a(DeviceStandardReq.o)
+ .debug_info    0x00001f40       0x79 libUSB_Serial.a(Events.o)
+ .debug_info    0x00001fb9      0x23b libUSB_Serial.a(USBTask.o)
+ .debug_info    0x000021f4      0xd1b libUSB_Serial.a(CDCClassDevice.o)
+ .debug_info    0x00002f0f      0x691 libUSB_Serial.a(Descriptors.o)
+ .debug_info    0x000035a0      0x449 libUSB_Serial.a(Endpoint_AVR8.o)
+ .debug_info    0x000039e9     0x157b libUSB_Serial.a(EndpointStream_AVR8.o)
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000     0x1457
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0x61 main.o
+ .debug_abbrev  0x00000061       0x79 delay.o
+ .debug_abbrev  0x000000da       0xf4 comunicacion.o
+ .debug_abbrev  0x000001ce       0xa3 reloj.o
+ .debug_abbrev  0x00000271       0x86 Timer0.o
+ .debug_abbrev  0x000002f7       0x3f Timer1.o
+ .debug_abbrev  0x00000336       0x7c uart.o
+ .debug_abbrev  0x000003b2       0x76 eeprom.o
+ .debug_abbrev  0x00000428      0x189 libUSB_Serial.a(USB_Serial.o)
+ .debug_abbrev  0x000005b1      0x15a libUSB_Serial.a(USBController_AVR8.o)
+ .debug_abbrev  0x0000070b      0x176 libUSB_Serial.a(USBInterrupt_AVR8.o)
+ .debug_abbrev  0x00000881      0x22d libUSB_Serial.a(DeviceStandardReq.o)
+ .debug_abbrev  0x00000aae       0x4a libUSB_Serial.a(Events.o)
+ .debug_abbrev  0x00000af8      0x15d libUSB_Serial.a(USBTask.o)
+ .debug_abbrev  0x00000c55      0x347 libUSB_Serial.a(CDCClassDevice.o)
+ .debug_abbrev  0x00000f9c      0x170 libUSB_Serial.a(Descriptors.o)
+ .debug_abbrev  0x0000110c      0x1a1 libUSB_Serial.a(Endpoint_AVR8.o)
+ .debug_abbrev  0x000012ad      0x1aa libUSB_Serial.a(EndpointStream_AVR8.o)
+
+.debug_line     0x00000000     0x42d4
+ *(.debug_line)
+ .debug_line    0x00000000       0xd0 main.o
+ .debug_line    0x000000d0       0xe1 delay.o
+ .debug_line    0x000001b1      0x256 comunicacion.o
+ .debug_line    0x00000407      0x15a reloj.o
+ .debug_line    0x00000561       0xfb Timer0.o
+ .debug_line    0x0000065c       0x7a Timer1.o
+ .debug_line    0x000006d6       0xc0 uart.o
+ .debug_line    0x00000796       0xb2 eeprom.o
+ .debug_line    0x00000848      0x319 libUSB_Serial.a(USB_Serial.o)
+ .debug_line    0x00000b61      0x350 libUSB_Serial.a(USBController_AVR8.o)
+ .debug_line    0x00000eb1      0x4f9 libUSB_Serial.a(USBInterrupt_AVR8.o)
+ .debug_line    0x000013aa      0x5c9 libUSB_Serial.a(DeviceStandardReq.o)
+ .debug_line    0x00001973       0x80 libUSB_Serial.a(Events.o)
+ .debug_line    0x000019f3      0x1ab libUSB_Serial.a(USBTask.o)
+ .debug_line    0x00001b9e      0x96c libUSB_Serial.a(CDCClassDevice.o)
+ .debug_line    0x0000250a      0x1ce libUSB_Serial.a(Descriptors.o)
+ .debug_line    0x000026d8      0x43d libUSB_Serial.a(Endpoint_AVR8.o)
+ .debug_line    0x00002b15     0x17bf libUSB_Serial.a(EndpointStream_AVR8.o)
+
+.debug_frame    0x00000000      0x650
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x20 main.o
+ .debug_frame   0x00000020       0x30 delay.o
+ .debug_frame   0x00000050       0x80 comunicacion.o
+ .debug_frame   0x000000d0       0x50 reloj.o
+ .debug_frame   0x00000120       0x30 Timer0.o
+ .debug_frame   0x00000150       0x20 Timer1.o
+ .debug_frame   0x00000170       0x40 uart.o
+ .debug_frame   0x000001b0       0x30 eeprom.o
+ .debug_frame   0x000001e0       0xa0 libUSB_Serial.a(USB_Serial.o)
+ .debug_frame   0x00000280       0x40 libUSB_Serial.a(USBController_AVR8.o)
+ .debug_frame   0x000002c0       0x40 libUSB_Serial.a(USBInterrupt_AVR8.o)
+ .debug_frame   0x00000300       0x20 libUSB_Serial.a(DeviceStandardReq.o)
+ .debug_frame   0x00000320       0x20 libUSB_Serial.a(Events.o)
+ .debug_frame   0x00000340       0x20 libUSB_Serial.a(USBTask.o)
+ .debug_frame   0x00000360      0x110 libUSB_Serial.a(CDCClassDevice.o)
+ .debug_frame   0x00000470       0x20 libUSB_Serial.a(Descriptors.o)
+ .debug_frame   0x00000490       0x50 libUSB_Serial.a(Endpoint_AVR8.o)
+ .debug_frame   0x000004e0      0x170 libUSB_Serial.a(EndpointStream_AVR8.o)
+
+.debug_str      0x00000000     0x1f2e
+ *(.debug_str)
+ .debug_str     0x00000000       0x87 main.o
+                                 0xc0 (size before relaxing)
+ .debug_str     0x00000087       0x1d delay.o
+                                 0x5a (size before relaxing)
+ .debug_str     0x000000a4       0x81 comunicacion.o
+                                0x12f (size before relaxing)
+ .debug_str     0x00000125       0x55 reloj.o
+                                0x106 (size before relaxing)
+ .debug_str     0x0000017a       0x31 Timer0.o
+                                 0xe6 (size before relaxing)
+ .debug_str     0x000001ab       0x15 Timer1.o
+                                 0xb9 (size before relaxing)
+ .debug_str     0x000001c0       0x2f uart.o
+                                 0xd8 (size before relaxing)
+ .debug_str     0x000001ef       0x33 eeprom.o
+                                 0xd7 (size before relaxing)
+ .debug_str     0x00000222      0x386 libUSB_Serial.a(USB_Serial.o)
+                                0x42f (size before relaxing)
+ .debug_str     0x000005a8      0x349 libUSB_Serial.a(USBController_AVR8.o)
+                                0x44a (size before relaxing)
+ .debug_str     0x000008f1      0x104 libUSB_Serial.a(USBInterrupt_AVR8.o)
+                                0x3bc (size before relaxing)
+ .debug_str     0x000009f5      0x5fd libUSB_Serial.a(DeviceStandardReq.o)
+                                0x83a (size before relaxing)
+ .debug_str     0x00000ff2       0x34 libUSB_Serial.a(Events.o)
+                                 0xed (size before relaxing)
+ .debug_str     0x00001026       0x6a libUSB_Serial.a(USBTask.o)
+                                0x28d (size before relaxing)
+ .debug_str     0x00001090      0x531 libUSB_Serial.a(CDCClassDevice.o)
+                                0x9e1 (size before relaxing)
+ .debug_str     0x000015c1      0x426 libUSB_Serial.a(Descriptors.o)
+                                0x682 (size before relaxing)
+ .debug_str     0x000019e7      0x1a2 libUSB_Serial.a(Endpoint_AVR8.o)
+                                0x4c5 (size before relaxing)
+ .debug_str     0x00001b89      0x3a5 libUSB_Serial.a(EndpointStream_AVR8.o)
+                                0x764 (size before relaxing)
+
+.debug_loc      0x00000000     0x24db
+ *(.debug_loc)
+ .debug_loc     0x00000000      0x230 comunicacion.o
+ .debug_loc     0x00000230       0x1e reloj.o
+ .debug_loc     0x0000024e       0x1e uart.o
+ .debug_loc     0x0000026c       0x18 eeprom.o
+ .debug_loc     0x00000284       0x86 libUSB_Serial.a(USB_Serial.o)
+ .debug_loc     0x0000030a      0x25a libUSB_Serial.a(DeviceStandardReq.o)
+ .debug_loc     0x00000564      0x512 libUSB_Serial.a(CDCClassDevice.o)
+ .debug_loc     0x00000a76      0x160 libUSB_Serial.a(Descriptors.o)
+ .debug_loc     0x00000bd6       0x7f libUSB_Serial.a(Endpoint_AVR8.o)
+ .debug_loc     0x00000c55     0x1886 libUSB_Serial.a(EndpointStream_AVR8.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(main.elf elf32-avr)
+LOAD linker stubs
+
+.debug_ranges   0x00000000      0x318
+ .debug_ranges  0x00000000       0x58 libUSB_Serial.a(USB_Serial.o)
+ .debug_ranges  0x00000058       0x28 libUSB_Serial.a(USBController_AVR8.o)
+ .debug_ranges  0x00000080       0x28 libUSB_Serial.a(USBInterrupt_AVR8.o)
+ .debug_ranges  0x000000a8       0x78 libUSB_Serial.a(DeviceStandardReq.o)
+ .debug_ranges  0x00000120       0x18 libUSB_Serial.a(Events.o)
+ .debug_ranges  0x00000138       0x30 libUSB_Serial.a(USBTask.o)
+ .debug_ranges  0x00000168       0x90 libUSB_Serial.a(CDCClassDevice.o)
+ .debug_ranges  0x000001f8       0x18 libUSB_Serial.a(Descriptors.o)
+ .debug_ranges  0x00000210       0x48 libUSB_Serial.a(Endpoint_AVR8.o)
+ .debug_ranges  0x00000258       0xc0 libUSB_Serial.a(EndpointStream_AVR8.o)
+
+Cross Reference Table
+
+Symbol                                            File
+CALLBACK_USB_GetDescriptor                        libUSB_Serial.a(Descriptors.o)
+                                                  libUSB_Serial.a(DeviceStandardReq.o)
+CDC_Device_BytesReceived                          libUSB_Serial.a(CDCClassDevice.o)
+CDC_Device_ConfigureEndpoints                     libUSB_Serial.a(CDCClassDevice.o)
+                                                  libUSB_Serial.a(USB_Serial.o)
+CDC_Device_CreateBlockingStream                   libUSB_Serial.a(CDCClassDevice.o)
+CDC_Device_CreateStream                           libUSB_Serial.a(CDCClassDevice.o)
+CDC_Device_Event_Stub                             libUSB_Serial.a(CDCClassDevice.o)
+CDC_Device_Flush                                  libUSB_Serial.a(CDCClassDevice.o)
+CDC_Device_ProcessControlRequest                  libUSB_Serial.a(CDCClassDevice.o)
+                                                  libUSB_Serial.a(USB_Serial.o)
+CDC_Device_ReceiveByte                            libUSB_Serial.a(CDCClassDevice.o)
+                                                  libUSB_Serial.a(USB_Serial.o)
+CDC_Device_SendByte                               libUSB_Serial.a(CDCClassDevice.o)
+                                                  libUSB_Serial.a(USB_Serial.o)
+CDC_Device_SendControlLineStateChange             libUSB_Serial.a(CDCClassDevice.o)
+CDC_Device_SendData                               libUSB_Serial.a(CDCClassDevice.o)
+CDC_Device_SendString                             libUSB_Serial.a(CDCClassDevice.o)
+CDC_Device_USBTask                                libUSB_Serial.a(CDCClassDevice.o)
+                                                  libUSB_Serial.a(USB_Serial.o)
+Clock_Display                                     reloj.o
+                                                  Timer0.o
+Clock_Init                                        reloj.o
+                                                  main.o
+Clock_Update                                      reloj.o
+                                                  Timer0.o
+ConfigurationDescriptor                           libUSB_Serial.a(Descriptors.o)
+DeviceDescriptor                                  libUSB_Serial.a(Descriptors.o)
+EEPROM_read                                       eeprom.o
+                                                  main.o
+EEPROM_write                                      eeprom.o
+                                                  main.o
+EVENT_CDC_Device_BreakSent                        libUSB_Serial.a(CDCClassDevice.o)
+EVENT_CDC_Device_ControLineStateChanged           libUSB_Serial.a(CDCClassDevice.o)
+EVENT_CDC_Device_LineEncodingChanged              libUSB_Serial.a(CDCClassDevice.o)
+EVENT_USB_Device_ConfigurationChanged             libUSB_Serial.a(USB_Serial.o)
+                                                  libUSB_Serial.a(DeviceStandardReq.o)
+EVENT_USB_Device_Connect                          libUSB_Serial.a(USB_Serial.o)
+                                                  libUSB_Serial.a(USBInterrupt_AVR8.o)
+EVENT_USB_Device_ControlRequest                   libUSB_Serial.a(USB_Serial.o)
+                                                  libUSB_Serial.a(DeviceStandardReq.o)
+EVENT_USB_Device_Disconnect                       libUSB_Serial.a(USB_Serial.o)
+                                                  libUSB_Serial.a(USBInterrupt_AVR8.o)
+EVENT_USB_Device_Reset                            libUSB_Serial.a(Events.o)
+                                                  libUSB_Serial.a(USBInterrupt_AVR8.o)
+EVENT_USB_Device_StartOfFrame                     libUSB_Serial.a(Events.o)
+                                                  libUSB_Serial.a(USBInterrupt_AVR8.o)
+EVENT_USB_Device_Suspend                          libUSB_Serial.a(Events.o)
+                                                  libUSB_Serial.a(USBInterrupt_AVR8.o)
+EVENT_USB_Device_WakeUp                           libUSB_Serial.a(Events.o)
+                                                  libUSB_Serial.a(USBInterrupt_AVR8.o)
+Endpoint_ClearEndpoints                           libUSB_Serial.a(Endpoint_AVR8.o)
+Endpoint_ClearStatusStage                         libUSB_Serial.a(Endpoint_AVR8.o)
+                                                  libUSB_Serial.a(CDCClassDevice.o)
+                                                  libUSB_Serial.a(DeviceStandardReq.o)
+Endpoint_ConfigureEndpoint_Prv                    libUSB_Serial.a(Endpoint_AVR8.o)
+                                                  libUSB_Serial.a(CDCClassDevice.o)
+                                                  libUSB_Serial.a(USBInterrupt_AVR8.o)
+                                                  libUSB_Serial.a(USBController_AVR8.o)
+Endpoint_Discard_Stream                           libUSB_Serial.a(EndpointStream_AVR8.o)
+Endpoint_Null_Stream                              libUSB_Serial.a(EndpointStream_AVR8.o)
+Endpoint_Read_Control_EStream_BE                  libUSB_Serial.a(EndpointStream_AVR8.o)
+Endpoint_Read_Control_EStream_LE                  libUSB_Serial.a(EndpointStream_AVR8.o)
+Endpoint_Read_Control_Stream_BE                   libUSB_Serial.a(EndpointStream_AVR8.o)
+Endpoint_Read_Control_Stream_LE                   libUSB_Serial.a(EndpointStream_AVR8.o)
+Endpoint_Read_EStream_BE                          libUSB_Serial.a(EndpointStream_AVR8.o)
+Endpoint_Read_EStream_LE                          libUSB_Serial.a(EndpointStream_AVR8.o)
+Endpoint_Read_Stream_BE                           libUSB_Serial.a(EndpointStream_AVR8.o)
+Endpoint_Read_Stream_LE                           libUSB_Serial.a(EndpointStream_AVR8.o)
+Endpoint_WaitUntilReady                           libUSB_Serial.a(Endpoint_AVR8.o)
+                                                  libUSB_Serial.a(EndpointStream_AVR8.o)
+                                                  libUSB_Serial.a(CDCClassDevice.o)
+Endpoint_Write_Control_EStream_BE                 libUSB_Serial.a(EndpointStream_AVR8.o)
+Endpoint_Write_Control_EStream_LE                 libUSB_Serial.a(EndpointStream_AVR8.o)
+Endpoint_Write_Control_PStream_BE                 libUSB_Serial.a(EndpointStream_AVR8.o)
+Endpoint_Write_Control_PStream_LE                 libUSB_Serial.a(EndpointStream_AVR8.o)
+                                                  libUSB_Serial.a(DeviceStandardReq.o)
+Endpoint_Write_Control_Stream_BE                  libUSB_Serial.a(EndpointStream_AVR8.o)
+Endpoint_Write_Control_Stream_LE                  libUSB_Serial.a(EndpointStream_AVR8.o)
+                                                  libUSB_Serial.a(DeviceStandardReq.o)
+Endpoint_Write_EStream_BE                         libUSB_Serial.a(EndpointStream_AVR8.o)
+Endpoint_Write_EStream_LE                         libUSB_Serial.a(EndpointStream_AVR8.o)
+Endpoint_Write_PStream_BE                         libUSB_Serial.a(EndpointStream_AVR8.o)
+Endpoint_Write_PStream_LE                         libUSB_Serial.a(EndpointStream_AVR8.o)
+Endpoint_Write_Stream_BE                          libUSB_Serial.a(EndpointStream_AVR8.o)
+Endpoint_Write_Stream_LE                          libUSB_Serial.a(EndpointStream_AVR8.o)
+                                                  libUSB_Serial.a(CDCClassDevice.o)
+LanguageString                                    libUSB_Serial.a(Descriptors.o)
+ManufacturerString                                libUSB_Serial.a(Descriptors.o)
+PrintDec2d                                        reloj.o
+ProductString                                     libUSB_Serial.a(Descriptors.o)
+SetupHardware                                     libUSB_Serial.a(USB_Serial.o)
+Timer0_Init                                       Timer0.o
+Timer1_Init                                       Timer1.o
+USART_Init                                        uart.o
+USART_Receive                                     uart.o
+USART_Transmit                                    uart.o
+USB_ControlRequest                                libUSB_Serial.a(EndpointStream_AVR8.o)
+                                                  libUSB_Serial.a(Endpoint_AVR8.o)
+                                                  libUSB_Serial.a(CDCClassDevice.o)
+                                                  libUSB_Serial.a(USBTask.o)
+                                                  libUSB_Serial.a(DeviceStandardReq.o)
+USB_DeviceState                                   libUSB_Serial.a(EndpointStream_AVR8.o)
+                                                  libUSB_Serial.a(Endpoint_AVR8.o)
+                                                  libUSB_Serial.a(CDCClassDevice.o)
+                                                  libUSB_Serial.a(USBTask.o)
+                                                  libUSB_Serial.a(DeviceStandardReq.o)
+                                                  libUSB_Serial.a(USBInterrupt_AVR8.o)
+                                                  libUSB_Serial.a(USBController_AVR8.o)
+USB_Device_ConfigurationNumber                    libUSB_Serial.a(DeviceStandardReq.o)
+                                                  libUSB_Serial.a(USBInterrupt_AVR8.o)
+                                                  libUSB_Serial.a(USBController_AVR8.o)
+USB_Device_CurrentlySelfPowered                   libUSB_Serial.a(DeviceStandardReq.o)
+                                                  libUSB_Serial.a(USBController_AVR8.o)
+USB_Device_ProcessControlRequest                  libUSB_Serial.a(DeviceStandardReq.o)
+                                                  libUSB_Serial.a(USBTask.o)
+USB_Device_RemoteWakeupEnabled                    libUSB_Serial.a(DeviceStandardReq.o)
+                                                  libUSB_Serial.a(USBController_AVR8.o)
+USB_Disable                                       libUSB_Serial.a(USBController_AVR8.o)
+USB_Event_Stub                                    libUSB_Serial.a(Events.o)
+USB_INT_ClearAllInterrupts                        libUSB_Serial.a(USBInterrupt_AVR8.o)
+                                                  libUSB_Serial.a(USBController_AVR8.o)
+USB_INT_DisableAllInterrupts                      libUSB_Serial.a(USBInterrupt_AVR8.o)
+                                                  libUSB_Serial.a(USBController_AVR8.o)
+USB_Init                                          libUSB_Serial.a(USBController_AVR8.o)
+                                                  libUSB_Serial.a(USB_Serial.o)
+USB_IsInitialized                                 libUSB_Serial.a(USBTask.o)
+                                                  libUSB_Serial.a(USBController_AVR8.o)
+USB_ResetInterface                                libUSB_Serial.a(USBController_AVR8.o)
+USB_Rx                                            comunicacion.o
+                                                  main.o
+USB_SerialInit                                    libUSB_Serial.a(USB_Serial.o)
+                                                  main.o
+USB_SerialRx                                      libUSB_Serial.a(USB_Serial.o)
+                                                  comunicacion.o
+USB_SerialTx                                      libUSB_Serial.a(USB_Serial.o)
+                                                  comunicacion.o
+USB_SerialUpdate                                  libUSB_Serial.a(USB_Serial.o)
+                                                  comunicacion.o
+USB_TX                                            comunicacion.o
+                                                  reloj.o
+                                                  main.o
+USB_USBTask                                       libUSB_Serial.a(USBTask.o)
+                                                  libUSB_Serial.a(EndpointStream_AVR8.o)
+                                                  libUSB_Serial.a(CDCClassDevice.o)
+                                                  libUSB_Serial.a(USB_Serial.o)
+USB_getsRX                                        comunicacion.o
+USB_putsTX                                        comunicacion.o
+                                                  main.o
+VirtualSerial_CDC_Interface                       libUSB_Serial.a(USB_Serial.o)
+__bad_interrupt                                   c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__bss_end                                         c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+__bss_start                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+__data_end                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+__data_load_start                                 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+__data_start                                      c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+__do_clear_bss                                    c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                                                  libUSB_Serial.a(USBTask.o)
+                                                  libUSB_Serial.a(DeviceStandardReq.o)
+                                                  Timer0.o
+                                                  reloj.o
+                                                  main.o
+__do_copy_data                                    c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                                                  libUSB_Serial.a(CDCClassDevice.o)
+                                                  libUSB_Serial.a(USB_Serial.o)
+                                                  main.o
+__eerd_byte_m32u4                                 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega32u4.o)
+                                                  libUSB_Serial.a(EndpointStream_AVR8.o)
+__eeupd_byte_m32u4                                c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eeupd_byte_atmega32u4.o)
+                                                  libUSB_Serial.a(EndpointStream_AVR8.o)
+__eeupd_r18_m32u4                                 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eeupd_byte_atmega32u4.o)
+__heap_end                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__init                                            c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__stack                                           c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__udivmodhi4                                      c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                                                  comunicacion.o
+__udivmodqi4                                      c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
+                                                  reloj.o
+__vector_1                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_10                                       libUSB_Serial.a(USBInterrupt_AVR8.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_11                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_12                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_13                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_14                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_15                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_16                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_17                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_18                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_19                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_2                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_20                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_21                                       Timer0.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_22                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_23                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_24                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_25                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_26                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_27                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_28                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_29                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_3                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_30                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_31                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_32                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_33                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_34                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_35                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_36                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_37                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_38                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_39                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_4                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_40                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_41                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_42                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_5                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_6                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_7                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_8                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_9                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vector_default                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+__vectors                                         c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+_exit                                             c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+atoi                                              comunicacion.o
+dato                                              main.o
+delay                                             delay.o
+                                                  main.o
+delay1seg                                         delay.o
+exit                                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+horas                                             reloj.o
+itoa                                              comunicacion.o
+main                                              main.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32u4.o
+min                                               reloj.o
+seg                                               reloj.o
+updateUSB                                         comunicacion.o

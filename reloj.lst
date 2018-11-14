@@ -1,0 +1,141 @@
+   1               		.file	"reloj.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	Clock_Init
+  18               	Clock_Init:
+  19               	.LFB2:
+  20               	.LM1:
+  21               	.LVL0:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24               	.LM2:
+  25 0000 4093 0000 		sts seg,r20
+  26               	.LM3:
+  27 0004 6093 0000 		sts min,r22
+  28               	.LM4:
+  29 0008 8093 0000 		sts horas,r24
+  30               	/* epilogue start */
+  31               	.LM5:
+  32 000c 0895      		ret
+  33               	.LFE2:
+  35               	.global	Clock_Update
+  37               	Clock_Update:
+  38               	.LFB3:
+  39               	.LM6:
+  40               	/* prologue: function */
+  41               	/* frame size = 0 */
+  42               	.LM7:
+  43 000e 8091 0000 		lds r24,seg
+  44 0012 8F5F      		subi r24,lo8(-(1))
+  45 0014 8093 0000 		sts seg,r24
+  46               	.LM8:
+  47 0018 8C33      		cpi r24,lo8(60)
+  48 001a 01F4      		brne .L5
+  49               	.LM9:
+  50 001c 1092 0000 		sts seg,__zero_reg__
+  51               	.LM10:
+  52 0020 8091 0000 		lds r24,min
+  53 0024 8F5F      		subi r24,lo8(-(1))
+  54 0026 8093 0000 		sts min,r24
+  55               	.LM11:
+  56 002a 8C33      		cpi r24,lo8(60)
+  57 002c 01F4      		brne .L5
+  58               	.LM12:
+  59 002e 1092 0000 		sts min,__zero_reg__
+  60               	.LM13:
+  61 0032 8091 0000 		lds r24,horas
+  62 0036 8F5F      		subi r24,lo8(-(1))
+  63 0038 8093 0000 		sts horas,r24
+  64               	.LM14:
+  65 003c 8831      		cpi r24,lo8(24)
+  66 003e 01F4      		brne .L5
+  67               	.LM15:
+  68 0040 1092 0000 		sts horas,__zero_reg__
+  69               	.L5:
+  70 0044 0895      		ret
+  71               	.LFE3:
+  73               	.global	PrintDec2d
+  75               	PrintDec2d:
+  76               	.LFB4:
+  77               	.LM16:
+  78               	.LVL1:
+  79 0046 1F93      		push r17
+  80               	/* prologue: function */
+  81               	/* frame size = 0 */
+  82 0048 182F      		mov r17,r24
+  83               	.LM17:
+  84 004a 6AE0      		ldi r22,lo8(10)
+  85 004c 0E94 0000 		call __udivmodqi4
+  86               	.LVL2:
+  87 0050 805D      		subi r24,lo8(-(48))
+  88 0052 0E94 0000 		call USB_TX
+  89               	.LM18:
+  90 0056 812F      		mov r24,r17
+  91 0058 6AE0      		ldi r22,lo8(10)
+  92 005a 0E94 0000 		call __udivmodqi4
+  93 005e 892F      		mov r24,r25
+  94 0060 805D      		subi r24,lo8(-(48))
+  95 0062 0E94 0000 		call USB_TX
+  96               	/* epilogue start */
+  97               	.LM19:
+  98 0066 1F91      		pop r17
+  99               	.LVL3:
+ 100 0068 0895      		ret
+ 101               	.LFE4:
+ 103               	.global	Clock_Display
+ 105               	Clock_Display:
+ 106               	.LFB5:
+ 107               	.LM20:
+ 108               	/* prologue: function */
+ 109               	/* frame size = 0 */
+ 110               	.LM21:
+ 111 006a 8DE0      		ldi r24,lo8(13)
+ 112 006c 0E94 0000 		call USB_TX
+ 113               	.LM22:
+ 114 0070 8091 0000 		lds r24,horas
+ 115 0074 0E94 0000 		call PrintDec2d
+ 116               	.LM23:
+ 117 0078 8AE3      		ldi r24,lo8(58)
+ 118 007a 0E94 0000 		call USB_TX
+ 119               	.LM24:
+ 120 007e 8091 0000 		lds r24,min
+ 121 0082 0E94 0000 		call PrintDec2d
+ 122               	.LM25:
+ 123 0086 8AE3      		ldi r24,lo8(58)
+ 124 0088 0E94 0000 		call USB_TX
+ 125               	.LM26:
+ 126 008c 8091 0000 		lds r24,seg
+ 127 0090 0E94 0000 		call PrintDec2d
+ 128               	/* epilogue start */
+ 129               	.LM27:
+ 130 0094 0895      		ret
+ 131               	.LFE5:
+ 133               		.comm seg,1,1
+ 134               		.comm min,1,1
+ 135               		.comm horas,1,1
+ 184               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 reloj.c
+C:\Users\lenovo\AppData\Local\Temp/ccPBvlsi.s:2      *ABS*:0000003f __SREG__
+C:\Users\lenovo\AppData\Local\Temp/ccPBvlsi.s:3      *ABS*:0000003e __SP_H__
+C:\Users\lenovo\AppData\Local\Temp/ccPBvlsi.s:4      *ABS*:0000003d __SP_L__
+C:\Users\lenovo\AppData\Local\Temp/ccPBvlsi.s:5      *ABS*:00000034 __CCP__
+C:\Users\lenovo\AppData\Local\Temp/ccPBvlsi.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\lenovo\AppData\Local\Temp/ccPBvlsi.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\lenovo\AppData\Local\Temp/ccPBvlsi.s:18     .text:00000000 Clock_Init
+                            *COM*:00000001 seg
+                            *COM*:00000001 min
+                            *COM*:00000001 horas
+C:\Users\lenovo\AppData\Local\Temp/ccPBvlsi.s:37     .text:0000000e Clock_Update
+C:\Users\lenovo\AppData\Local\Temp/ccPBvlsi.s:75     .text:00000046 PrintDec2d
+C:\Users\lenovo\AppData\Local\Temp/ccPBvlsi.s:105    .text:0000006a Clock_Display
+
+UNDEFINED SYMBOLS
+__udivmodqi4
+USB_TX
+__do_clear_bss

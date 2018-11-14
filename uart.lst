@@ -1,0 +1,89 @@
+   1               		.file	"uart.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	USART_Init
+  18               	USART_Init:
+  19               	.LFB2:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 87E6      		ldi r24,lo8(103)
+  25 0002 90E0      		ldi r25,hi8(103)
+  26 0004 9093 CD00 		sts (204)+1,r25
+  27 0008 8093 CC00 		sts 204,r24
+  28               	.LM3:
+  29 000c 1092 C800 		sts 200,__zero_reg__
+  30               	.LM4:
+  31 0010 88E1      		ldi r24,lo8(24)
+  32 0012 8093 C900 		sts 201,r24
+  33               	.LM5:
+  34 0016 EAEC      		ldi r30,lo8(202)
+  35 0018 F0E0      		ldi r31,hi8(202)
+  36 001a 8081      		ld r24,Z
+  37 001c 877F      		andi r24,lo8(-9)
+  38 001e 8083      		st Z,r24
+  39               	.LM6:
+  40 0020 8081      		ld r24,Z
+  41 0022 8660      		ori r24,lo8(6)
+  42 0024 8083      		st Z,r24
+  43               	/* epilogue start */
+  44               	.LM7:
+  45 0026 0895      		ret
+  46               	.LFE2:
+  48               	.global	USART_Transmit
+  50               	USART_Transmit:
+  51               	.LFB3:
+  52               	.LM8:
+  53               	.LVL0:
+  54               	/* prologue: function */
+  55               	/* frame size = 0 */
+  56 0028 982F      		mov r25,r24
+  57               	.LVL1:
+  58               	.L4:
+  59               	.LM9:
+  60 002a 8091 C800 		lds r24,200
+  61 002e 85FF      		sbrs r24,5
+  62 0030 00C0      		rjmp .L4
+  63               	.LM10:
+  64 0032 9093 CE00 		sts 206,r25
+  65               	/* epilogue start */
+  66               	.LM11:
+  67 0036 0895      		ret
+  68               	.LFE3:
+  70               	.global	USART_Receive
+  72               	USART_Receive:
+  73               	.LFB4:
+  74               	.LM12:
+  75               	/* prologue: function */
+  76               	/* frame size = 0 */
+  77               	.L8:
+  78               	.LM13:
+  79 0038 8091 C800 		lds r24,200
+  80 003c 87FF      		sbrs r24,7
+  81 003e 00C0      		rjmp .L8
+  82               	.LM14:
+  83 0040 8091 CE00 		lds r24,206
+  84               	/* epilogue start */
+  85               	.LM15:
+  86 0044 0895      		ret
+  87               	.LFE4:
+ 129               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 uart.c
+C:\Users\lenovo\AppData\Local\Temp/ccMzZ3Tz.s:2      *ABS*:0000003f __SREG__
+C:\Users\lenovo\AppData\Local\Temp/ccMzZ3Tz.s:3      *ABS*:0000003e __SP_H__
+C:\Users\lenovo\AppData\Local\Temp/ccMzZ3Tz.s:4      *ABS*:0000003d __SP_L__
+C:\Users\lenovo\AppData\Local\Temp/ccMzZ3Tz.s:5      *ABS*:00000034 __CCP__
+C:\Users\lenovo\AppData\Local\Temp/ccMzZ3Tz.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\lenovo\AppData\Local\Temp/ccMzZ3Tz.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\lenovo\AppData\Local\Temp/ccMzZ3Tz.s:18     .text:00000000 USART_Init
+C:\Users\lenovo\AppData\Local\Temp/ccMzZ3Tz.s:50     .text:00000028 USART_Transmit
+C:\Users\lenovo\AppData\Local\Temp/ccMzZ3Tz.s:72     .text:00000038 USART_Receive
+
+NO UNDEFINED SYMBOLS

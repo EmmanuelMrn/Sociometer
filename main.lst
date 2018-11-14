@@ -1,0 +1,104 @@
+   1               		.file	"main.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               		.data
+  17               	.LC0:
+  18 0000 5265 6C6F 		.string	"Reloj"
+  18      6A00 
+  19               		.text
+  20               	.global	main
+  22               	main:
+  23               	.LFB2:
+  24               	.LM1:
+  25               	/* prologue: function */
+  26               	/* frame size = 0 */
+  27               	.LM2:
+  28 0000 80E8      		ldi r24,lo8(9600)
+  29 0002 95E2      		ldi r25,hi8(9600)
+  30 0004 0E94 0000 		call USB_SerialInit
+  31               	.LM3:
+  32               	/* #APP */
+  33               	 ;  22 "main.c" 1
+  34 0008 7894      		sei
+  35               	 ;  0 "" 2
+  36               	.LM4:
+  37               	/* #NOAPP */
+  38 000a 0E94 0000 		call USB_Rx
+  39 000e 8093 0000 		sts dato,r24
+  40               	.LM5:
+  41 0012 80E0      		ldi r24,lo8(.LC0)
+  42 0014 90E0      		ldi r25,hi8(.LC0)
+  43 0016 0E94 0000 		call USB_putsTX
+  44               	.LM6:
+  45 001a 8AE0      		ldi r24,lo8(10)
+  46 001c 0E94 0000 		call USB_TX
+  47               	.LM7:
+  48 0020 8DE0      		ldi r24,lo8(13)
+  49 0022 0E94 0000 		call USB_TX
+  50               	.LM8:
+  51 0026 87E1      		ldi r24,lo8(23)
+  52 0028 6BE3      		ldi r22,lo8(59)
+  53 002a 47E3      		ldi r20,lo8(55)
+  54 002c 0E94 0000 		call Clock_Init
+  55               	.L2:
+  56               	.LM9:
+  57 0030 8AE0      		ldi r24,lo8(10)
+  58 0032 0E94 0000 		call USB_TX
+  59               	.LM10:
+  60 0036 8DE0      		ldi r24,lo8(13)
+  61 0038 0E94 0000 		call USB_TX
+  62               	.LM11:
+  63 003c 84EF      		ldi r24,lo8(1012)
+  64 003e 93E0      		ldi r25,hi8(1012)
+  65 0040 65E5      		ldi r22,lo8(85)
+  66 0042 0E94 0000 		call EEPROM_write
+  67               	.LM12:
+  68 0046 80E0      		ldi r24,lo8(1024)
+  69 0048 94E0      		ldi r25,hi8(1024)
+  70 004a 6AEA      		ldi r22,lo8(-86)
+  71 004c 0E94 0000 		call EEPROM_write
+  72               	.LM13:
+  73 0050 0E94 0000 		call delay
+  74               	.LM14:
+  75 0054 84EF      		ldi r24,lo8(1012)
+  76 0056 93E0      		ldi r25,hi8(1012)
+  77 0058 0E94 0000 		call EEPROM_read
+  78               	.LM15:
+  79 005c 0E94 0000 		call USB_TX
+  80               	.LM16:
+  81 0060 80E0      		ldi r24,lo8(1024)
+  82 0062 94E0      		ldi r25,hi8(1024)
+  83 0064 0E94 0000 		call EEPROM_read
+  84               	.LM17:
+  85 0068 0E94 0000 		call USB_TX
+  86 006c 00C0      		rjmp .L2
+  87               	.LFE2:
+  89               		.comm dato,1,1
+ 114               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\lenovo\AppData\Local\Temp/ccVqfTyM.s:2      *ABS*:0000003f __SREG__
+C:\Users\lenovo\AppData\Local\Temp/ccVqfTyM.s:3      *ABS*:0000003e __SP_H__
+C:\Users\lenovo\AppData\Local\Temp/ccVqfTyM.s:4      *ABS*:0000003d __SP_L__
+C:\Users\lenovo\AppData\Local\Temp/ccVqfTyM.s:5      *ABS*:00000034 __CCP__
+C:\Users\lenovo\AppData\Local\Temp/ccVqfTyM.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\lenovo\AppData\Local\Temp/ccVqfTyM.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\lenovo\AppData\Local\Temp/ccVqfTyM.s:22     .text:00000000 main
+                            *COM*:00000001 dato
+
+UNDEFINED SYMBOLS
+USB_SerialInit
+USB_Rx
+USB_putsTX
+USB_TX
+Clock_Init
+EEPROM_write
+delay
+EEPROM_read
+__do_copy_data
+__do_clear_bss

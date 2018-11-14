@@ -1,0 +1,403 @@
+   1               		.file	"calendar.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	determinedaycode
+  18               	determinedaycode:
+  19               	.LFB3:
+  20               	.LM1:
+  21               	.LVL0:
+  22 0000 8F92      		push r8
+  23 0002 9F92      		push r9
+  24 0004 AF92      		push r10
+  25 0006 BF92      		push r11
+  26 0008 CF92      		push r12
+  27 000a DF92      		push r13
+  28 000c EF92      		push r14
+  29 000e FF92      		push r15
+  30 0010 0F93      		push r16
+  31 0012 1F93      		push r17
+  32               	/* prologue: function */
+  33               	/* frame size = 0 */
+  34 0014 4C01      		movw r8,r24
+  35               	.LM2:
+  36 0016 B401      		movw r22,r8
+  37 0018 8827      		clr r24
+  38 001a 77FD      		sbrc r23,7
+  39 001c 8095      		com r24
+  40 001e 982F      		mov r25,r24
+  41               	.LVL1:
+  42 0020 0E94 0000 		call __floatsisf
+  43               	.LVL2:
+  44 0024 20E0      		ldi r18,lo8(0x3f800000)
+  45 0026 30E0      		ldi r19,hi8(0x3f800000)
+  46 0028 40E8      		ldi r20,hlo8(0x3f800000)
+  47 002a 5FE3      		ldi r21,hhi8(0x3f800000)
+  48 002c 0E94 0000 		call __subsf3
+  49 0030 5B01      		movw r10,r22
+  50 0032 6C01      		movw r12,r24
+  51 0034 20E0      		ldi r18,lo8(0x3e800000)
+  52 0036 30E0      		ldi r19,hi8(0x3e800000)
+  53 0038 40E8      		ldi r20,hlo8(0x3e800000)
+  54 003a 5EE3      		ldi r21,hhi8(0x3e800000)
+  55 003c 0E94 0000 		call __mulsf3
+  56 0040 0E94 0000 		call __fixsfsi
+  57 0044 7B01      		movw r14,r22
+  58 0046 8C01      		movw r16,r24
+  59 0048 C601      		movw r24,r12
+  60 004a B501      		movw r22,r10
+  61 004c 20E0      		ldi r18,lo8(0x43c80000)
+  62 004e 30E0      		ldi r19,hi8(0x43c80000)
+  63 0050 48EC      		ldi r20,hlo8(0x43c80000)
+  64 0052 53E4      		ldi r21,hhi8(0x43c80000)
+  65 0054 0E94 0000 		call __divsf3
+  66 0058 0E94 0000 		call __fixsfsi
+  67 005c E60E      		add r14,r22
+  68 005e F71E      		adc r15,r23
+  69 0060 E80C      		add r14,r8
+  70 0062 F91C      		adc r15,r9
+  71               	.LVL3:
+  72 0064 C601      		movw r24,r12
+  73 0066 B501      		movw r22,r10
+  74 0068 20E0      		ldi r18,lo8(0x42c80000)
+  75 006a 30E0      		ldi r19,hi8(0x42c80000)
+  76 006c 48EC      		ldi r20,hlo8(0x42c80000)
+  77 006e 52E4      		ldi r21,hhi8(0x42c80000)
+  78 0070 0E94 0000 		call __divsf3
+  79 0074 0E94 0000 		call __fixsfsi
+  80 0078 C701      		movw r24,r14
+  81 007a 861B      		sub r24,r22
+  82 007c 970B      		sbc r25,r23
+  83 007e 67E0      		ldi r22,lo8(7)
+  84 0080 70E0      		ldi r23,hi8(7)
+  85 0082 0E94 0000 		call __divmodhi4
+  86               	/* epilogue start */
+  87               	.LM3:
+  88 0086 1F91      		pop r17
+  89 0088 0F91      		pop r16
+  90 008a FF90      		pop r15
+  91 008c EF90      		pop r14
+  92 008e DF90      		pop r13
+  93 0090 CF90      		pop r12
+  94 0092 BF90      		pop r11
+  95 0094 AF90      		pop r10
+  96 0096 9F90      		pop r9
+  97 0098 8F90      		pop r8
+  98               	.LVL4:
+  99 009a 0895      		ret
+ 100               	.LFE3:
+ 102               	.global	determineleapyear
+ 104               	determineleapyear:
+ 105               	.LFB4:
+ 106               	.LM4:
+ 107               	.LVL5:
+ 108               	/* prologue: function */
+ 109               	/* frame size = 0 */
+ 110 009c 9C01      		movw r18,r24
+ 111               	.LM5:
+ 112 009e 8370      		andi r24,lo8(3)
+ 113 00a0 9070      		andi r25,hi8(3)
+ 114               	.LVL6:
+ 115 00a2 892B      		or r24,r25
+ 116 00a4 01F4      		brne .L4
+ 117 00a6 C901      		movw r24,r18
+ 118 00a8 64E6      		ldi r22,lo8(100)
+ 119 00aa 70E0      		ldi r23,hi8(100)
+ 120 00ac 0E94 0000 		call __divmodhi4
+ 121 00b0 892B      		or r24,r25
+ 122 00b2 01F4      		brne .L5
+ 123               	.L4:
+ 124 00b4 C901      		movw r24,r18
+ 125 00b6 60E9      		ldi r22,lo8(400)
+ 126 00b8 71E0      		ldi r23,hi8(400)
+ 127 00ba 0E94 0000 		call __divmodhi4
+ 128 00be 892B      		or r24,r25
+ 129 00c0 01F4      		brne .L6
+ 130               	.L5:
+ 131               	.LM6:
+ 132 00c2 8DE1      		ldi r24,lo8(29)
+ 133 00c4 90E0      		ldi r25,hi8(29)
+ 134 00c6 9093 0000 		sts (days_in_month+4)+1,r25
+ 135 00ca 8093 0000 		sts days_in_month+4,r24
+ 136 00ce 21E0      		ldi r18,lo8(1)
+ 137 00d0 30E0      		ldi r19,hi8(1)
+ 138               	.LVL7:
+ 139 00d2 00C0      		rjmp .L7
+ 140               	.LVL8:
+ 141               	.L6:
+ 142               	.LM7:
+ 143 00d4 8CE1      		ldi r24,lo8(28)
+ 144 00d6 90E0      		ldi r25,hi8(28)
+ 145 00d8 9093 0000 		sts (days_in_month+4)+1,r25
+ 146 00dc 8093 0000 		sts days_in_month+4,r24
+ 147 00e0 20E0      		ldi r18,lo8(0)
+ 148 00e2 30E0      		ldi r19,hi8(0)
+ 149               	.LVL9:
+ 150               	.L7:
+ 151               	.LM8:
+ 152 00e4 C901      		movw r24,r18
+ 153               	/* epilogue start */
+ 154 00e6 0895      		ret
+ 155               	.LFE4:
+ 157               		.data
+ 158               	.LC0:
+ 159 0000 0A0A 5375 		.string	"\n\nSun  Mon  Tue  Wed  Thu  Fri  Sat\n"
+ 159      6E20 204D 
+ 159      6F6E 2020 
+ 159      5475 6520 
+ 159      2057 6564 
+ 160               	.LC1:
+ 161 0025 2000      		.string	" "
+ 162               	.LC2:
+ 163 0027 2020 2000 		.string	"   "
+ 164               		.text
+ 165               	.global	calendar
+ 167               	calendar:
+ 168               	.LFB5:
+ 169               	.LM9:
+ 170               	.LVL10:
+ 171 00e8 AF92      		push r10
+ 172 00ea BF92      		push r11
+ 173 00ec CF92      		push r12
+ 174 00ee DF92      		push r13
+ 175 00f0 EF92      		push r14
+ 176 00f2 FF92      		push r15
+ 177 00f4 0F93      		push r16
+ 178 00f6 1F93      		push r17
+ 179 00f8 CF93      		push r28
+ 180 00fa DF93      		push r29
+ 181               	/* prologue: function */
+ 182               	/* frame size = 0 */
+ 183 00fc 7B01      		movw r14,r22
+ 184               	.LM10:
+ 185 00fe 20E0      		ldi r18,lo8(months+2)
+ 186 0100 C22E      		mov r12,r18
+ 187 0102 20E0      		ldi r18,hi8(months+2)
+ 188 0104 D22E      		mov r13,r18
+ 189 0106 90E0      		ldi r25,lo8(days_in_month+2)
+ 190 0108 A92E      		mov r10,r25
+ 191 010a 90E0      		ldi r25,hi8(days_in_month+2)
+ 192 010c B92E      		mov r11,r25
+ 193               	.LVL11:
+ 194               	.L17:
+ 195               	.LM11:
+ 196 010e F601      		movw r30,r12
+ 197 0110 8081      		ld r24,Z
+ 198 0112 9181      		ldd r25,Z+1
+ 199               	.LVL12:
+ 200 0114 0E94 0000 		call USB_putsTX
+ 201               	.LM12:
+ 202 0118 80E0      		ldi r24,lo8(.LC0)
+ 203 011a 90E0      		ldi r25,hi8(.LC0)
+ 204 011c 0E94 0000 		call USB_putsTX
+ 205               	.LM13:
+ 206 0120 8701      		movw r16,r14
+ 207 0122 000F      		lsl r16
+ 208 0124 111F      		rol r17
+ 209 0126 000F      		lsl r16
+ 210 0128 111F      		rol r17
+ 211 012a 0E0D      		add r16,r14
+ 212 012c 1F1D      		adc r17,r15
+ 213 012e 0F5F      		subi r16,lo8(-(1))
+ 214 0130 1F4F      		sbci r17,hi8(-(1))
+ 215 0132 C1E0      		ldi r28,lo8(1)
+ 216 0134 D0E0      		ldi r29,hi8(1)
+ 217               	.LVL13:
+ 218 0136 00C0      		rjmp .L10
+ 219               	.L11:
+ 220               	.LM14:
+ 221 0138 80E0      		ldi r24,lo8(.LC1)
+ 222 013a 90E0      		ldi r25,hi8(.LC1)
+ 223 013c 0E94 0000 		call USB_putsTX
+ 224               	.LM15:
+ 225 0140 2196      		adiw r28,1
+ 226               	.L10:
+ 227 0142 0C17      		cp r16,r28
+ 228 0144 1D07      		cpc r17,r29
+ 229 0146 04F4      		brge .L11
+ 230 0148 C1E0      		ldi r28,lo8(1)
+ 231 014a D0E0      		ldi r29,hi8(1)
+ 232               	.LVL14:
+ 233 014c 00C0      		rjmp .L12
+ 234               	.L15:
+ 235               	.LM16:
+ 236 014e CE01      		movw r24,r28
+ 237 0150 0E94 0000 		call USB_putsTX
+ 238               	.LM17:
+ 239 0154 CE01      		movw r24,r28
+ 240 0156 8E0D      		add r24,r14
+ 241 0158 9F1D      		adc r25,r15
+ 242 015a 67E0      		ldi r22,lo8(7)
+ 243 015c 70E0      		ldi r23,hi8(7)
+ 244 015e 0E94 0000 		call __divmodhi4
+ 245 0162 1816      		cp __zero_reg__,r24
+ 246 0164 1906      		cpc __zero_reg__,r25
+ 247 0166 04F4      		brge .L13
+ 248               	.LM18:
+ 249 0168 80E0      		ldi r24,lo8(.LC2)
+ 250 016a 90E0      		ldi r25,hi8(.LC2)
+ 251 016c 0E94 0000 		call USB_putsTX
+ 252 0170 00C0      		rjmp .L14
+ 253               	.L13:
+ 254               	.LM19:
+ 255 0172 8AE0      		ldi r24,lo8(10)
+ 256 0174 90E0      		ldi r25,hi8(10)
+ 257 0176 0E94 0000 		call USB_TX
+ 258               	.L14:
+ 259               	.LM20:
+ 260 017a 8DE0      		ldi r24,lo8(13)
+ 261 017c 90E0      		ldi r25,hi8(13)
+ 262 017e 0E94 0000 		call USB_TX
+ 263               	.LM21:
+ 264 0182 2196      		adiw r28,1
+ 265               	.L12:
+ 266 0184 F501      		movw r30,r10
+ 267 0186 8081      		ld r24,Z
+ 268 0188 9181      		ldd r25,Z+1
+ 269 018a 8C17      		cp r24,r28
+ 270 018c 9D07      		cpc r25,r29
+ 271 018e 04F4      		brge .L15
+ 272 0190 22E0      		ldi r18,lo8(2)
+ 273 0192 30E0      		ldi r19,hi8(2)
+ 274 0194 C20E      		add r12,r18
+ 275 0196 D31E      		adc r13,r19
+ 276 0198 A20E      		add r10,r18
+ 277 019a B31E      		adc r11,r19
+ 278               	.LM22:
+ 279 019c 30E0      		ldi r19,lo8(months+26)
+ 280 019e C316      		cp r12,r19
+ 281 01a0 30E0      		ldi r19,hi8(months+26)
+ 282 01a2 D306      		cpc r13,r19
+ 283 01a4 01F0      		breq .L18
+ 284               	.LM23:
+ 285 01a6 8E0D      		add r24,r14
+ 286 01a8 9F1D      		adc r25,r15
+ 287 01aa 67E0      		ldi r22,lo8(7)
+ 288 01ac 70E0      		ldi r23,hi8(7)
+ 289 01ae 0E94 0000 		call __divmodhi4
+ 290 01b2 7C01      		movw r14,r24
+ 291 01b4 00C0      		rjmp .L17
+ 292               	.LVL15:
+ 293               	.L18:
+ 294               	/* epilogue start */
+ 295               	.LM24:
+ 296 01b6 DF91      		pop r29
+ 297 01b8 CF91      		pop r28
+ 298               	.LVL16:
+ 299 01ba 1F91      		pop r17
+ 300 01bc 0F91      		pop r16
+ 301 01be FF90      		pop r15
+ 302 01c0 EF90      		pop r14
+ 303               	.LVL17:
+ 304 01c2 DF90      		pop r13
+ 305 01c4 CF90      		pop r12
+ 306 01c6 BF90      		pop r11
+ 307 01c8 AF90      		pop r10
+ 308 01ca 0895      		ret
+ 309               	.LFE5:
+ 311               	.global	days_in_month
+ 312               		.data
+ 315               	days_in_month:
+ 316 002b 0000      		.word	0
+ 317 002d 1F00      		.word	31
+ 318 002f 1C00      		.word	28
+ 319 0031 1F00      		.word	31
+ 320 0033 1E00      		.word	30
+ 321 0035 1F00      		.word	31
+ 322 0037 1E00      		.word	30
+ 323 0039 1F00      		.word	31
+ 324 003b 1F00      		.word	31
+ 325 003d 1E00      		.word	30
+ 326 003f 1F00      		.word	31
+ 327 0041 1E00      		.word	30
+ 328 0043 1F00      		.word	31
+ 329               	.global	months
+ 330               	.LC3:
+ 331 0045 0A0A 0A4A 		.string	"\n\n\nJanuary"
+ 331      616E 7561 
+ 331      7279 00
+ 332               	.LC4:
+ 333 0050 0A0A 0A46 		.string	"\n\n\nFebruary"
+ 333      6562 7275 
+ 333      6172 7900 
+ 334               	.LC5:
+ 335 005c 0A0A 0A4D 		.string	"\n\n\nMarch"
+ 335      6172 6368 
+ 335      00
+ 336               	.LC6:
+ 337 0065 0A0A 0A41 		.string	"\n\n\nApril"
+ 337      7072 696C 
+ 337      00
+ 338               	.LC7:
+ 339 006e 0A0A 0A4D 		.string	"\n\n\nMay"
+ 339      6179 00
+ 340               	.LC8:
+ 341 0075 0A0A 0A4A 		.string	"\n\n\nJune"
+ 341      756E 6500 
+ 342               	.LC9:
+ 343 007d 0A0A 0A4A 		.string	"\n\n\nJuly"
+ 343      756C 7900 
+ 344               	.LC10:
+ 345 0085 0A0A 0A41 		.string	"\n\n\nAugust"
+ 345      7567 7573 
+ 345      7400 
+ 346               	.LC11:
+ 347 008f 0A0A 0A53 		.string	"\n\n\nSeptember"
+ 347      6570 7465 
+ 347      6D62 6572 
+ 347      00
+ 348               	.LC12:
+ 349 009c 0A0A 0A4F 		.string	"\n\n\nOctober"
+ 349      6374 6F62 
+ 349      6572 00
+ 350               	.LC13:
+ 351 00a7 0A0A 0A4E 		.string	"\n\n\nNovember"
+ 351      6F76 656D 
+ 351      6265 7200 
+ 352               	.LC14:
+ 353 00b3 0A0A 0A44 		.string	"\n\n\nDecember"
+ 353      6563 656D 
+ 353      6265 7200 
+ 356               	months:
+ 357 00bf 0000      		.word	.LC1
+ 358 00c1 0000      		.word	.LC3
+ 359 00c3 0000      		.word	.LC4
+ 360 00c5 0000      		.word	.LC5
+ 361 00c7 0000      		.word	.LC6
+ 362 00c9 0000      		.word	.LC7
+ 363 00cb 0000      		.word	.LC8
+ 364 00cd 0000      		.word	.LC9
+ 365 00cf 0000      		.word	.LC10
+ 366 00d1 0000      		.word	.LC11
+ 367 00d3 0000      		.word	.LC12
+ 368 00d5 0000      		.word	.LC13
+ 369 00d7 0000      		.word	.LC14
+ 410               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 calendar.c
+C:\Users\lenovo\AppData\Local\Temp/cc98W5zT.s:2      *ABS*:0000003f __SREG__
+C:\Users\lenovo\AppData\Local\Temp/cc98W5zT.s:3      *ABS*:0000003e __SP_H__
+C:\Users\lenovo\AppData\Local\Temp/cc98W5zT.s:4      *ABS*:0000003d __SP_L__
+C:\Users\lenovo\AppData\Local\Temp/cc98W5zT.s:5      *ABS*:00000034 __CCP__
+C:\Users\lenovo\AppData\Local\Temp/cc98W5zT.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\lenovo\AppData\Local\Temp/cc98W5zT.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\lenovo\AppData\Local\Temp/cc98W5zT.s:18     .text:00000000 determinedaycode
+C:\Users\lenovo\AppData\Local\Temp/cc98W5zT.s:104    .text:0000009c determineleapyear
+C:\Users\lenovo\AppData\Local\Temp/cc98W5zT.s:315    .data:0000002b days_in_month
+C:\Users\lenovo\AppData\Local\Temp/cc98W5zT.s:167    .text:000000e8 calendar
+C:\Users\lenovo\AppData\Local\Temp/cc98W5zT.s:356    .data:000000bf months
+
+UNDEFINED SYMBOLS
+__floatsisf
+__subsf3
+__mulsf3
+__fixsfsi
+__divsf3
+__divmodhi4
+USB_putsTX
+USB_TX
+__do_copy_data

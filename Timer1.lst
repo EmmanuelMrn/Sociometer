@@ -1,0 +1,50 @@
+   1               		.file	"Timer1.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	Timer1_Init
+  18               	Timer1_Init:
+  19               	.LFB2:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 1092 8500 		sts (132)+1,__zero_reg__
+  25 0004 1092 8400 		sts 132,__zero_reg__
+  26               	.LM3:
+  27 0008 E0E8      		ldi r30,lo8(128)
+  28 000a F0E0      		ldi r31,hi8(128)
+  29 000c 8081      		ld r24,Z
+  30 000e 8064      		ori r24,lo8(64)
+  31 0010 8083      		st Z,r24
+  32               	.LM4:
+  33 0012 88E6      		ldi r24,lo8(104)
+  34 0014 90E0      		ldi r25,hi8(104)
+  35 0016 9093 8900 		sts (136)+1,r25
+  36 001a 8093 8800 		sts 136,r24
+  37               	.LM5:
+  38 001e E1E8      		ldi r30,lo8(129)
+  39 0020 F0E0      		ldi r31,hi8(129)
+  40 0022 8081      		ld r24,Z
+  41 0024 8960      		ori r24,lo8(9)
+  42 0026 8083      		st Z,r24
+  43               	/* epilogue start */
+  44               	.LM6:
+  45 0028 0895      		ret
+  46               	.LFE2:
+  72               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 Timer1.c
+C:\Users\lenovo\AppData\Local\Temp/ccUnhGNo.s:2      *ABS*:0000003f __SREG__
+C:\Users\lenovo\AppData\Local\Temp/ccUnhGNo.s:3      *ABS*:0000003e __SP_H__
+C:\Users\lenovo\AppData\Local\Temp/ccUnhGNo.s:4      *ABS*:0000003d __SP_L__
+C:\Users\lenovo\AppData\Local\Temp/ccUnhGNo.s:5      *ABS*:00000034 __CCP__
+C:\Users\lenovo\AppData\Local\Temp/ccUnhGNo.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\lenovo\AppData\Local\Temp/ccUnhGNo.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\lenovo\AppData\Local\Temp/ccUnhGNo.s:18     .text:00000000 Timer1_Init
+
+NO UNDEFINED SYMBOLS

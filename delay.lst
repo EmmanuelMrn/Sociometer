@@ -1,0 +1,182 @@
+   1               		.file	"delay.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	delay
+  18               	delay:
+  19               	.LFB2:
+  20               	.LM1:
+  21 0000 DF93      		push r29
+  22 0002 CF93      		push r28
+  23 0004 00D0      		rcall .
+  24 0006 00D0      		rcall .
+  25 0008 CDB7      		in r28,__SP_L__
+  26 000a DEB7      		in r29,__SP_H__
+  27               	/* prologue: function */
+  28               	/* frame size = 4 */
+  29               	.LM2:
+  30 000c 80E0      		ldi r24,lo8(256)
+  31 000e 91E0      		ldi r25,hi8(256)
+  32 0010 9A83      		std Y+2,r25
+  33 0012 8983      		std Y+1,r24
+  34               	.LVL0:
+  35               	.LM3:
+  36 0014 24EF      		ldi r18,lo8(500)
+  37 0016 31E0      		ldi r19,hi8(500)
+  38               	.LVL1:
+  39               	.L3:
+  40 0018 3C83      		std Y+4,r19
+  41 001a 2B83      		std Y+3,r18
+  42               	.LVL2:
+  43               	.L2:
+  44               	.LM4:
+  45               	/* #APP */
+  46               	 ;  8 "delay.c" 1
+  47 001c 0000      		nop
+  48               	 ;  0 "" 2
+  49               	.LM5:
+  50               	 ;  9 "delay.c" 1
+  51 001e 0000      		nop
+  52               	 ;  0 "" 2
+  53               	.LM6:
+  54               	 ;  10 "delay.c" 1
+  55 0020 0000      		nop
+  56               	 ;  0 "" 2
+  57               	.LM7:
+  58               	 ;  11 "delay.c" 1
+  59 0022 0000      		nop
+  60               	 ;  0 "" 2
+  61               	.LM8:
+  62               	/* #NOAPP */
+  63 0024 8B81      		ldd r24,Y+3
+  64 0026 9C81      		ldd r25,Y+4
+  65 0028 0197      		sbiw r24,1
+  66 002a 9C83      		std Y+4,r25
+  67 002c 8B83      		std Y+3,r24
+  68               	.LVL3:
+  69 002e 8B81      		ldd r24,Y+3
+  70 0030 9C81      		ldd r25,Y+4
+  71 0032 892B      		or r24,r25
+  72 0034 01F4      		brne .L2
+  73               	.LM9:
+  74 0036 8981      		ldd r24,Y+1
+  75 0038 9A81      		ldd r25,Y+2
+  76 003a 0197      		sbiw r24,1
+  77 003c 9A83      		std Y+2,r25
+  78 003e 8983      		std Y+1,r24
+  79               	.LVL4:
+  80 0040 8981      		ldd r24,Y+1
+  81 0042 9A81      		ldd r25,Y+2
+  82 0044 892B      		or r24,r25
+  83 0046 01F4      		brne .L3
+  84               	/* epilogue start */
+  85               	.LM10:
+  86 0048 0F90      		pop __tmp_reg__
+  87 004a 0F90      		pop __tmp_reg__
+  88 004c 0F90      		pop __tmp_reg__
+  89 004e 0F90      		pop __tmp_reg__
+  90 0050 CF91      		pop r28
+  91 0052 DF91      		pop r29
+  92 0054 0895      		ret
+  93               	.LFE2:
+  95               	.global	delay1seg
+  97               	delay1seg:
+  98               	.LFB3:
+  99               	.LM11:
+ 100 0056 DF93      		push r29
+ 101 0058 CF93      		push r28
+ 102 005a CDB7      		in r28,__SP_L__
+ 103 005c DEB7      		in r29,__SP_H__
+ 104 005e 2897      		sbiw r28,8
+ 105 0060 0FB6      		in __tmp_reg__,__SREG__
+ 106 0062 F894      		cli
+ 107 0064 DEBF      		out __SP_H__,r29
+ 108 0066 0FBE      		out __SREG__,__tmp_reg__
+ 109 0068 CDBF      		out __SP_L__,r28
+ 110               	/* prologue: function */
+ 111               	/* frame size = 8 */
+ 112               	.LBB2:
+ 113               	.LM12:
+ 114 006a 28EE      		ldi r18,lo8(1000)
+ 115 006c 33E0      		ldi r19,hi8(1000)
+ 116               	.LVL5:
+ 117               	.L9:
+ 118 006e 1A82      		std Y+2,__zero_reg__
+ 119 0070 1982      		std Y+1,__zero_reg__
+ 120               	.LVL6:
+ 121 0072 1C82      		std Y+4,__zero_reg__
+ 122 0074 1B82      		std Y+3,__zero_reg__
+ 123               	.LVL7:
+ 124 0076 1E82      		std Y+6,__zero_reg__
+ 125 0078 1D82      		std Y+5,__zero_reg__
+ 126               	.LVL8:
+ 127 007a 3887      		std Y+8,r19
+ 128 007c 2F83      		std Y+7,r18
+ 129               	.LVL9:
+ 130               	.L13:
+ 131               	.LM13:
+ 132 007e 8D81      		ldd r24,Y+5
+ 133 0080 9E81      		ldd r25,Y+6
+ 134 0082 0196      		adiw r24,1
+ 135 0084 9E83      		std Y+6,r25
+ 136 0086 8D83      		std Y+5,r24
+ 137               	.LVL10:
+ 138               	.LM14:
+ 139 0088 8D81      		ldd r24,Y+5
+ 140 008a 9E81      		ldd r25,Y+6
+ 141 008c 8159      		subi r24,lo8(401)
+ 142 008e 9140      		sbci r25,hi8(401)
+ 143 0090 04F0      		brlt .L13
+ 144               	.LM15:
+ 145 0092 8B81      		ldd r24,Y+3
+ 146 0094 9C81      		ldd r25,Y+4
+ 147 0096 0196      		adiw r24,1
+ 148 0098 9C83      		std Y+4,r25
+ 149 009a 8B83      		std Y+3,r24
+ 150               	.LVL11:
+ 151               	.LM16:
+ 152 009c 8B81      		ldd r24,Y+3
+ 153 009e 9C81      		ldd r25,Y+4
+ 154 00a0 8B59      		subi r24,lo8(411)
+ 155 00a2 9140      		sbci r25,hi8(411)
+ 156 00a4 04F0      		brlt .L13
+ 157               	.LM17:
+ 158 00a6 8981      		ldd r24,Y+1
+ 159 00a8 9A81      		ldd r25,Y+2
+ 160 00aa 0196      		adiw r24,1
+ 161 00ac 9A83      		std Y+2,r25
+ 162 00ae 8983      		std Y+1,r24
+ 163               	.LVL12:
+ 164               	.LM18:
+ 165 00b0 8981      		ldd r24,Y+1
+ 166 00b2 9A81      		ldd r25,Y+2
+ 167 00b4 8E59      		subi r24,lo8(414)
+ 168 00b6 9140      		sbci r25,hi8(414)
+ 169 00b8 04F0      		brlt .L13
+ 170               	.LM19:
+ 171 00ba 8F81      		ldd r24,Y+7
+ 172 00bc 9885      		ldd r25,Y+8
+ 173 00be 0197      		sbiw r24,1
+ 174 00c0 9887      		std Y+8,r25
+ 175 00c2 8F83      		std Y+7,r24
+ 176               	.LVL13:
+ 177 00c4 00C0      		rjmp .L9
+ 178               	.LBE2:
+ 179               	.LFE3:
+ 213               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 delay.c
+C:\Users\lenovo\AppData\Local\Temp/cc3WjSeV.s:2      *ABS*:0000003f __SREG__
+C:\Users\lenovo\AppData\Local\Temp/cc3WjSeV.s:3      *ABS*:0000003e __SP_H__
+C:\Users\lenovo\AppData\Local\Temp/cc3WjSeV.s:4      *ABS*:0000003d __SP_L__
+C:\Users\lenovo\AppData\Local\Temp/cc3WjSeV.s:5      *ABS*:00000034 __CCP__
+C:\Users\lenovo\AppData\Local\Temp/cc3WjSeV.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\lenovo\AppData\Local\Temp/cc3WjSeV.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\lenovo\AppData\Local\Temp/cc3WjSeV.s:18     .text:00000000 delay
+C:\Users\lenovo\AppData\Local\Temp/cc3WjSeV.s:97     .text:00000056 delay1seg
+
+NO UNDEFINED SYMBOLS

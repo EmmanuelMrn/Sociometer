@@ -1,0 +1,384 @@
+   1               		.file	"comunicacion.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	itoa
+  18               	itoa:
+  19               	.LFB7:
+  20               	.LM1:
+  21               	.LVL0:
+  22 0000 EF92      		push r14
+  23 0002 FF92      		push r15
+  24 0004 0F93      		push r16
+  25 0006 1F93      		push r17
+  26 0008 CF93      		push r28
+  27 000a DF93      		push r29
+  28               	/* prologue: function */
+  29               	/* frame size = 0 */
+  30 000c 8C01      		movw r16,r24
+  31 000e E42E      		mov r14,r20
+  32               	.LM2:
+  33 0010 CB01      		movw r24,r22
+  34               	.LVL1:
+  35 0012 F62E      		mov r15,r22
+  36               	.LVL2:
+  37 0014 492F      		mov r20,r25
+  38               	.LVL3:
+  39 0016 C0E0      		ldi r28,lo8(0)
+  40 0018 D0E0      		ldi r29,hi8(0)
+  41               	.LVL4:
+  42               	.L5:
+  43               	.LM3:
+  44 001a 8F2D      		mov r24,r15
+  45 001c 942F      		mov r25,r20
+  46 001e 6E2D      		mov r22,r14
+  47 0020 70E0      		ldi r23,lo8(0)
+  48 0022 0E94 0000 		call __udivmodhi4
+  49 0026 9C01      		movw r18,r24
+  50               	.LM4:
+  51 0028 8F2D      		mov r24,r15
+  52 002a 942F      		mov r25,r20
+  53 002c 6E2D      		mov r22,r14
+  54 002e 70E0      		ldi r23,lo8(0)
+  55 0030 0E94 0000 		call __udivmodhi4
+  56 0034 FB01      		movw r30,r22
+  57 0036 CB01      		movw r24,r22
+  58 0038 F62E      		mov r15,r22
+  59 003a 492F      		mov r20,r25
+  60               	.LM5:
+  61 003c 2A30      		cpi r18,10
+  62 003e 3105      		cpc r19,__zero_reg__
+  63               	.LVL5:
+  64 0040 00F0      		brlo .L2
+  65               	.LM6:
+  66 0042 822F      		mov r24,r18
+  67               	.LVL6:
+  68 0044 895C      		subi r24,lo8(-(55))
+  69 0046 00C0      		rjmp .L3
+  70               	.LVL7:
+  71               	.L2:
+  72               	.LM7:
+  73 0048 822F      		mov r24,r18
+  74               	.LVL8:
+  75 004a 805D      		subi r24,lo8(-(48))
+  76               	.L3:
+  77               	.LM8:
+  78 004c D801      		movw r26,r16
+  79 004e 8D93      		st X+,r24
+  80 0050 8D01      		movw r16,r26
+  81               	.LM9:
+  82 0052 CE01      		movw r24,r28
+  83               	.LVL9:
+  84 0054 0196      		adiw r24,1
+  85               	.LVL10:
+  86               	.LM10:
+  87 0056 EF2B      		or r30,r31
+  88 0058 01F0      		breq .L4
+  89               	.LVL11:
+  90 005a EC01      		movw r28,r24
+  91 005c 00C0      		rjmp .L5
+  92               	.LVL12:
+  93               	.L4:
+  94               	.LM11:
+  95 005e FD01      		movw r30,r26
+  96               	.LVL13:
+  97 0060 1082      		st Z,__zero_reg__
+  98               	.LM12:
+  99 0062 E81B      		sub r30,r24
+ 100 0064 F90B      		sbc r31,r25
+ 101 0066 DF01      		movw r26,r30
+ 102 0068 AC0F      		add r26,r28
+ 103 006a BD1F      		adc r27,r29
+ 104 006c 9E01      		movw r18,r28
+ 105               	.LVL14:
+ 106 006e 80E0      		ldi r24,lo8(0)
+ 107 0070 90E0      		ldi r25,hi8(0)
+ 108               	.LVL15:
+ 109 0072 00C0      		rjmp .L6
+ 110               	.L8:
+ 111               	.LM13:
+ 112 0074 5081      		ld r21,Z
+ 113 0076 4C91      		ld r20,X
+ 114               	.LVL16:
+ 115 0078 5417      		cp r21,r20
+ 116 007a 01F0      		breq .L7
+ 117               	.LM14:
+ 118 007c 4083      		st Z,r20
+ 119               	.LM15:
+ 120 007e 5C93      		st X,r21
+ 121               	.L7:
+ 122               	.LM16:
+ 123 0080 0196      		adiw r24,1
+ 124               	.LM17:
+ 125 0082 2150      		subi r18,lo8(-(-1))
+ 126 0084 3040      		sbci r19,hi8(-(-1))
+ 127 0086 3196      		adiw r30,1
+ 128 0088 1197      		sbiw r26,1
+ 129               	.LVL17:
+ 130               	.L6:
+ 131               	.LM18:
+ 132 008a 8217      		cp r24,r18
+ 133 008c 9307      		cpc r25,r19
+ 134 008e 00F0      		brlo .L8
+ 135               	/* epilogue start */
+ 136               	.LM19:
+ 137 0090 DF91      		pop r29
+ 138 0092 CF91      		pop r28
+ 139               	.LVL18:
+ 140 0094 1F91      		pop r17
+ 141 0096 0F91      		pop r16
+ 142               	.LVL19:
+ 143 0098 FF90      		pop r15
+ 144               	.LVL20:
+ 145 009a EF90      		pop r14
+ 146               	.LVL21:
+ 147 009c 0895      		ret
+ 148               	.LFE7:
+ 150               	.global	atoi
+ 152               	atoi:
+ 153               	.LFB8:
+ 154               	.LM20:
+ 155               	.LVL22:
+ 156               	/* prologue: function */
+ 157               	/* frame size = 0 */
+ 158 009e FC01      		movw r30,r24
+ 159               	.LM21:
+ 160 00a0 A0E0      		ldi r26,lo8(0)
+ 161 00a2 B0E0      		ldi r27,hi8(0)
+ 162               	.LVL23:
+ 163 00a4 00C0      		rjmp .L11
+ 164               	.LVL24:
+ 165               	.L12:
+ 166               	.LM22:
+ 167 00a6 3196      		adiw r30,1
+ 168               	.LM23:
+ 169 00a8 1196      		adiw r26,1
+ 170               	.LVL25:
+ 171               	.L11:
+ 172               	.LM24:
+ 173 00aa 8081      		ld r24,Z
+ 174 00ac 8823      		tst r24
+ 175 00ae 01F4      		brne .L12
+ 176               	.LM25:
+ 177 00b0 3197      		sbiw r30,1
+ 178               	.LVL26:
+ 179 00b2 60E0      		ldi r22,lo8(0)
+ 180 00b4 70E0      		ldi r23,hi8(0)
+ 181               	.LVL27:
+ 182 00b6 41E0      		ldi r20,lo8(1)
+ 183 00b8 50E0      		ldi r21,hi8(1)
+ 184               	.LVL28:
+ 185 00ba 00C0      		rjmp .L13
+ 186               	.LVL29:
+ 187               	.L15:
+ 188               	.LM26:
+ 189 00bc 8081      		ld r24,Z
+ 190 00be 282F      		mov r18,r24
+ 191               	.LVL30:
+ 192 00c0 30E0      		ldi r19,lo8(0)
+ 193               	.LM27:
+ 194 00c2 2053      		subi r18,lo8(-(-48))
+ 195 00c4 3040      		sbci r19,hi8(-(-48))
+ 196               	.LVL31:
+ 197               	.LM28:
+ 198 00c6 2A30      		cpi r18,10
+ 199 00c8 3105      		cpc r19,__zero_reg__
+ 200 00ca 00F4      		brsh .L14
+ 201               	.LM29:
+ 202 00cc 429F      		mul r20,r18
+ 203 00ce C001      		movw r24,r0
+ 204 00d0 439F      		mul r20,r19
+ 205 00d2 900D      		add r25,r0
+ 206 00d4 529F      		mul r21,r18
+ 207 00d6 900D      		add r25,r0
+ 208 00d8 1124      		clr r1
+ 209 00da 680F      		add r22,r24
+ 210 00dc 791F      		adc r23,r25
+ 211               	.LM30:
+ 212 00de CA01      		movw r24,r20
+ 213 00e0 880F      		lsl r24
+ 214 00e2 991F      		rol r25
+ 215               	.LVL32:
+ 216 00e4 23E0      		ldi r18,3
+ 217 00e6 440F      	1:	lsl r20
+ 218 00e8 551F      		rol r21
+ 219 00ea 2A95      		dec r18
+ 220 00ec 01F4      		brne 1b
+ 221               	.LVL33:
+ 222 00ee 480F      		add r20,r24
+ 223 00f0 591F      		adc r21,r25
+ 224               	.LM31:
+ 225 00f2 1197      		sbiw r26,1
+ 226               	.LVL34:
+ 227               	.L14:
+ 228               	.LM32:
+ 229 00f4 3197      		sbiw r30,1
+ 230               	.L13:
+ 231               	.LM33:
+ 232 00f6 1097      		sbiw r26,0
+ 233 00f8 01F4      		brne .L15
+ 234               	.LM34:
+ 235 00fa CB01      		movw r24,r22
+ 236               	.LVL35:
+ 237               	/* epilogue start */
+ 238 00fc 0895      		ret
+ 239               	.LFE8:
+ 241               	.global	USB_putsTX
+ 243               	USB_putsTX:
+ 244               	.LFB5:
+ 245               	.LM35:
+ 246               	.LVL36:
+ 247 00fe CF93      		push r28
+ 248 0100 DF93      		push r29
+ 249               	/* prologue: function */
+ 250               	/* frame size = 0 */
+ 251 0102 EC01      		movw r28,r24
+ 252 0104 00C0      		rjmp .L18
+ 253               	.LVL37:
+ 254               	.L19:
+ 255               	.LM36:
+ 256 0106 2196      		adiw r28,1
+ 257 0108 0E94 0000 		call USB_SerialTx
+ 258               	.LVL38:
+ 259               	.L18:
+ 260               	.LM37:
+ 261 010c 8881      		ld r24,Y
+ 262 010e 8823      		tst r24
+ 263 0110 01F4      		brne .L19
+ 264               	.LM38:
+ 265 0112 0E94 0000 		call USB_SerialUpdate
+ 266               	/* epilogue start */
+ 267               	.LM39:
+ 268 0116 DF91      		pop r29
+ 269 0118 CF91      		pop r28
+ 270               	.LVL39:
+ 271 011a 0895      		ret
+ 272               	.LFE5:
+ 274               	.global	updateUSB
+ 276               	updateUSB:
+ 277               	.LFB3:
+ 278               	.LM40:
+ 279               	/* prologue: function */
+ 280               	/* frame size = 0 */
+ 281               	.LM41:
+ 282 011c 0E94 0000 		call USB_SerialUpdate
+ 283               	/* epilogue start */
+ 284               	.LM42:
+ 285 0120 0895      		ret
+ 286               	.LFE3:
+ 288               	.global	USB_TX
+ 290               	USB_TX:
+ 291               	.LFB2:
+ 292               	.LM43:
+ 293               	.LVL40:
+ 294               	/* prologue: function */
+ 295               	/* frame size = 0 */
+ 296               	.LM44:
+ 297 0122 0E94 0000 		call USB_SerialTx
+ 298               	.LVL41:
+ 299               	.LM45:
+ 300 0126 0E94 0000 		call USB_SerialUpdate
+ 301               	/* epilogue start */
+ 302               	.LM46:
+ 303 012a 0895      		ret
+ 304               	.LFE2:
+ 306               	.global	USB_Rx
+ 308               	USB_Rx:
+ 309               	.LFB4:
+ 310               	.LM47:
+ 311 012c EF92      		push r14
+ 312 012e FF92      		push r15
+ 313 0130 1F93      		push r17
+ 314 0132 DF93      		push r29
+ 315 0134 CF93      		push r28
+ 316 0136 0F92      		push __tmp_reg__
+ 317 0138 CDB7      		in r28,__SP_L__
+ 318 013a DEB7      		in r29,__SP_H__
+ 319               	/* prologue: function */
+ 320               	/* frame size = 1 */
+ 321               	.LM48:
+ 322 013c 7E01      		movw r14,r28
+ 323 013e 0894      		sec
+ 324 0140 E11C      		adc r14,__zero_reg__
+ 325 0142 F11C      		adc r15,__zero_reg__
+ 326               	.L26:
+ 327 0144 C701      		movw r24,r14
+ 328 0146 0E94 0000 		call USB_SerialRx
+ 329 014a 182F      		mov r17,r24
+ 330               	.LVL42:
+ 331               	.LM49:
+ 332 014c 0E94 0000 		call USB_SerialUpdate
+ 333               	.LM50:
+ 334 0150 1123      		tst r17
+ 335 0152 01F0      		breq .L26
+ 336               	.LM51:
+ 337 0154 8981      		ldd r24,Y+1
+ 338               	.LVL43:
+ 339               	/* epilogue start */
+ 340 0156 0F90      		pop __tmp_reg__
+ 341 0158 CF91      		pop r28
+ 342 015a DF91      		pop r29
+ 343 015c 1F91      		pop r17
+ 344               	.LVL44:
+ 345 015e FF90      		pop r15
+ 346 0160 EF90      		pop r14
+ 347 0162 0895      		ret
+ 348               	.LFE4:
+ 350               	.global	USB_getsRX
+ 352               	USB_getsRX:
+ 353               	.LFB6:
+ 354               	.LM52:
+ 355               	.LVL45:
+ 356 0164 CF93      		push r28
+ 357 0166 DF93      		push r29
+ 358               	/* prologue: function */
+ 359               	/* frame size = 0 */
+ 360 0168 EC01      		movw r28,r24
+ 361               	.LVL46:
+ 362               	.L31:
+ 363               	.LM53:
+ 364 016a 0E94 0000 		call USB_Rx
+ 365               	.LVL47:
+ 366               	.LM54:
+ 367 016e 8D30      		cpi r24,lo8(13)
+ 368               	.LVL48:
+ 369 0170 01F0      		breq .L30
+ 370               	.LM55:
+ 371 0172 8993      		st Y+,r24
+ 372 0174 00C0      		rjmp .L31
+ 373               	.L30:
+ 374               	.LM56:
+ 375 0176 1882      		st Y,__zero_reg__
+ 376               	/* epilogue start */
+ 377               	.LM57:
+ 378 0178 DF91      		pop r29
+ 379 017a CF91      		pop r28
+ 380               	.LVL49:
+ 381 017c 0895      		ret
+ 382               	.LFE6:
+ 456               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 comunicacion.c
+C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:2      *ABS*:0000003f __SREG__
+C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:3      *ABS*:0000003e __SP_H__
+C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:4      *ABS*:0000003d __SP_L__
+C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:5      *ABS*:00000034 __CCP__
+C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:18     .text:00000000 itoa
+C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:152    .text:0000009e atoi
+C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:243    .text:000000fe USB_putsTX
+C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:276    .text:0000011c updateUSB
+C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:290    .text:00000122 USB_TX
+C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:308    .text:0000012c USB_Rx
+C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:352    .text:00000164 USB_getsRX
+
+UNDEFINED SYMBOLS
+__udivmodhi4
+USB_SerialTx
+USB_SerialUpdate
+USB_SerialRx
