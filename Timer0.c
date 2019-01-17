@@ -1,3 +1,5 @@
+//Este timer es para usar el reloj/calendario del programa
+
 #include <avr/interrupt.h>
 #include <inttypes.h>
 #include "reloj.h"

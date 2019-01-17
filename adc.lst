@@ -1,0 +1,62 @@
+   1               		.file	"adc.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	ADC_init
+  18               	ADC_init:
+  19               	.LFB2:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 81E4      		ldi r24,lo8(65)
+  25 0002 8093 7C00 		sts 124,r24
+  26               	.LM3:
+  27 0006 87E8      		ldi r24,lo8(-121)
+  28 0008 8093 7A00 		sts 122,r24
+  29               	/* epilogue start */
+  30               	.LM4:
+  31 000c 0895      		ret
+  32               	.LFE2:
+  34               	.global	ADC_read
+  36               	ADC_read:
+  37               	.LFB3:
+  38               	.LM5:
+  39               	/* prologue: function */
+  40               	/* frame size = 0 */
+  41               	.LM6:
+  42 000e 8091 7A00 		lds r24,122
+  43 0012 8064      		ori r24,lo8(64)
+  44 0014 8093 7A00 		sts 122,r24
+  45               	.L4:
+  46               	.LM7:
+  47 0018 8091 7A00 		lds r24,122
+  48 001c 86FD      		sbrc r24,6
+  49 001e 00C0      		rjmp .L4
+  50               	.LM8:
+  51 0020 8091 7800 		lds r24,120
+  52               	.LM9:
+  53 0024 9091 7900 		lds r25,121
+  54 0028 20E0      		ldi r18,lo8(0)
+  55               	.LM10:
+  56 002a 822B      		or r24,r18
+  57               	/* epilogue start */
+  58 002c 0895      		ret
+  59               	.LFE3:
+  93               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 adc.c
+C:\Users\lenovo\AppData\Local\Temp/cc265jFT.s:2      *ABS*:0000003f __SREG__
+C:\Users\lenovo\AppData\Local\Temp/cc265jFT.s:3      *ABS*:0000003e __SP_H__
+C:\Users\lenovo\AppData\Local\Temp/cc265jFT.s:4      *ABS*:0000003d __SP_L__
+C:\Users\lenovo\AppData\Local\Temp/cc265jFT.s:5      *ABS*:00000034 __CCP__
+C:\Users\lenovo\AppData\Local\Temp/cc265jFT.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\lenovo\AppData\Local\Temp/cc265jFT.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\lenovo\AppData\Local\Temp/cc265jFT.s:18     .text:00000000 ADC_init
+C:\Users\lenovo\AppData\Local\Temp/cc265jFT.s:36     .text:0000000e ADC_read
+
+NO UNDEFINED SYMBOLS

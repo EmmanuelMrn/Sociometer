@@ -7,12 +7,16 @@ void USART_Init( void ){
 	//Set baud rate
 	UBRR1 = 103;
 	//u2x=0, No parity
-	UCSR1A = 0; 
+	UCSR1A &= ~(1<<U2X1); 
 	//Enable receiver and transmitter
 	UCSR1B = (1<<RXEN1)|(1<<TXEN1);
 	//8data, 1stop bit
 	UCSR1C &= ~(1<<USBS1);
 	UCSR1C |=(3<<UCSZ10);
+}
+
+unsigned char USART_available( void ){
+	return (UCSR1A & (1<<RXC1));
 }
 
 void USART_Transmit( unsigned char data ){
@@ -29,9 +33,13 @@ unsigned char USART_Receive( void ){
 	return UDR1;
 }
 
-unsigned char USART_available( void ){
-	return (UCSR1A & (1<<RXC1));
+void USART_puts(char *str){
+	while(*str){
+		USART_Transmit(*str++);
+	}
+
 }
+
 
 unsigned int IR_ReceiveMSG(char *str){
 	char data = 0;
@@ -41,7 +49,8 @@ unsigned int IR_ReceiveMSG(char *str){
 			data = USART_Receive();
 			*str++ = data;
 			
-		}while(data != '\0');
-		
+		}while(*str != '\0');
+		return 1;
 	}
+	
 }

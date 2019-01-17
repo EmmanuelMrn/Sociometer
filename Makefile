@@ -80,7 +80,7 @@ OBJDIR = .
 
 
 # List C source files here. (C dependencies are automatically generated.)
-SRC = $(TARGET).c delay.c comunicacion.c reloj.c Timer0.c Timer1.c uart.c eeprom.c
+SRC = $(TARGET).c delay.c comunicacion.c reloj.c Timer0.c Timer1.c uart.c eeprom.c adc.c comparador.c
 
 
 

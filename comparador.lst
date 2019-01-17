@@ -1,0 +1,98 @@
+   1               		.file	"comparador.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	comparador_init
+  18               	comparador_init:
+  19               	.LFB2:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 EAE7      		ldi r30,lo8(122)
+  25 0002 F0E0      		ldi r31,hi8(122)
+  26 0004 8081      		ld r24,Z
+  27 0006 8F77      		andi r24,lo8(127)
+  28 0008 8083      		st Z,r24
+  29               	.LM3:
+  30 000a EBE7      		ldi r30,lo8(123)
+  31 000c F0E0      		ldi r31,hi8(123)
+  32 000e 8081      		ld r24,Z
+  33 0010 8064      		ori r24,lo8(64)
+  34 0012 8083      		st Z,r24
+  35               	.LM4:
+  36 0014 80B7      		in r24,80-32
+  37 0016 8B60      		ori r24,lo8(11)
+  38 0018 80BF      		out 80-32,r24
+  39               	.LM5:
+  40 001a ECE7      		ldi r30,lo8(124)
+  41 001c F0E0      		ldi r31,hi8(124)
+  42 001e 8081      		ld r24,Z
+  43 0020 8160      		ori r24,lo8(1)
+  44 0022 8083      		st Z,r24
+  45               	/* epilogue start */
+  46               	.LM6:
+  47 0024 0895      		ret
+  48               	.LFE2:
+  50               	.global	comparador_secFlag
+  52               	comparador_secFlag:
+  53               	.LFB3:
+  54               	.LM7:
+  55               	/* prologue: function */
+  56               	/* frame size = 0 */
+  57               	.LM8:
+  58 0026 8091 0000 		lds r24,flagSegundoComparador
+  59 002a 8823      		tst r24
+  60 002c 01F0      		breq .L5
+  61               	.LM9:
+  62 002e 1092 0000 		sts flagSegundoComparador,__zero_reg__
+  63 0032 81E0      		ldi r24,lo8(1)
+  64               	.L5:
+  65               	.LM10:
+  66 0034 0895      		ret
+  67               	.LFE3:
+  69               	.global	__vector_28
+  71               	__vector_28:
+  72               	.LFB4:
+  73               	.LM11:
+  74 0036 1F92      		push __zero_reg__
+  75 0038 0F92      		push r0
+  76 003a 0FB6      		in r0,__SREG__
+  77 003c 0F92      		push r0
+  78 003e 1124      		clr __zero_reg__
+  79 0040 8F93      		push r24
+  80               	/* prologue: Signal */
+  81               	/* frame size = 0 */
+  82               	.LM12:
+  83 0042 81E0      		ldi r24,lo8(1)
+  84 0044 8093 0000 		sts flagSegundoComparador,r24
+  85               	/* epilogue start */
+  86               	.LM13:
+  87 0048 8F91      		pop r24
+  88 004a 0F90      		pop r0
+  89 004c 0FBE      		out __SREG__,r0
+  90 004e 0F90      		pop r0
+  91 0050 1F90      		pop __zero_reg__
+  92 0052 1895      		reti
+  93               	.LFE4:
+  95               		.lcomm flagSegundoComparador,1
+ 136               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 comparador.c
+C:\Users\lenovo\AppData\Local\Temp/ccqJHrt6.s:2      *ABS*:0000003f __SREG__
+C:\Users\lenovo\AppData\Local\Temp/ccqJHrt6.s:3      *ABS*:0000003e __SP_H__
+C:\Users\lenovo\AppData\Local\Temp/ccqJHrt6.s:4      *ABS*:0000003d __SP_L__
+C:\Users\lenovo\AppData\Local\Temp/ccqJHrt6.s:5      *ABS*:00000034 __CCP__
+C:\Users\lenovo\AppData\Local\Temp/ccqJHrt6.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\lenovo\AppData\Local\Temp/ccqJHrt6.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\lenovo\AppData\Local\Temp/ccqJHrt6.s:18     .text:00000000 comparador_init
+C:\Users\lenovo\AppData\Local\Temp/ccqJHrt6.s:52     .text:00000026 comparador_secFlag
+                             .bss:00000000 flagSegundoComparador
+C:\Users\lenovo\AppData\Local\Temp/ccqJHrt6.s:71     .text:00000036 __vector_28
+
+UNDEFINED SYMBOLS
+__do_clear_bss

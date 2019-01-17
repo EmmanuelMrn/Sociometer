@@ -258,28 +258,28 @@
  270               	.LVL39:
  271 011a 0895      		ret
  272               	.LFE5:
- 274               	.global	updateUSB
- 276               	updateUSB:
+ 274               	.global	USB_TX
+ 276               	USB_TX:
  277               	.LFB3:
  278               	.LM40:
- 279               	/* prologue: function */
- 280               	/* frame size = 0 */
- 281               	.LM41:
- 282 011c 0E94 0000 		call USB_SerialUpdate
- 283               	/* epilogue start */
- 284               	.LM42:
- 285 0120 0895      		ret
- 286               	.LFE3:
- 288               	.global	USB_TX
- 290               	USB_TX:
- 291               	.LFB2:
- 292               	.LM43:
- 293               	.LVL40:
- 294               	/* prologue: function */
- 295               	/* frame size = 0 */
+ 279               	.LVL40:
+ 280               	/* prologue: function */
+ 281               	/* frame size = 0 */
+ 282               	.LM41:
+ 283 011c 0E94 0000 		call USB_SerialTx
+ 284               	.LVL41:
+ 285               	.LM42:
+ 286 0120 0E94 0000 		call USB_SerialUpdate
+ 287               	/* epilogue start */
+ 288               	.LM43:
+ 289 0124 0895      		ret
+ 290               	.LFE3:
+ 292               	.global	updateUSB
+ 294               	updateUSB:
+ 295               	.LFB2:
  296               	.LM44:
- 297 0122 0E94 0000 		call USB_SerialTx
- 298               	.LVL41:
+ 297               	/* prologue: function */
+ 298               	/* frame size = 0 */
  299               	.LM45:
  300 0126 0E94 0000 		call USB_SerialUpdate
  301               	/* epilogue start */
@@ -363,19 +363,19 @@
  456               	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:00000000 comunicacion.c
-C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:2      *ABS*:0000003f __SREG__
-C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:3      *ABS*:0000003e __SP_H__
-C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:4      *ABS*:0000003d __SP_L__
-C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:5      *ABS*:00000034 __CCP__
-C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:6      *ABS*:00000000 __tmp_reg__
-C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:7      *ABS*:00000001 __zero_reg__
-C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:18     .text:00000000 itoa
-C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:152    .text:0000009e atoi
-C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:243    .text:000000fe USB_putsTX
-C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:276    .text:0000011c updateUSB
-C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:290    .text:00000122 USB_TX
-C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:308    .text:0000012c USB_Rx
-C:\Users\lenovo\AppData\Local\Temp/cctIgDx6.s:352    .text:00000164 USB_getsRX
+C:\Users\lenovo\AppData\Local\Temp/ccJba7cU.s:2      *ABS*:0000003f __SREG__
+C:\Users\lenovo\AppData\Local\Temp/ccJba7cU.s:3      *ABS*:0000003e __SP_H__
+C:\Users\lenovo\AppData\Local\Temp/ccJba7cU.s:4      *ABS*:0000003d __SP_L__
+C:\Users\lenovo\AppData\Local\Temp/ccJba7cU.s:5      *ABS*:00000034 __CCP__
+C:\Users\lenovo\AppData\Local\Temp/ccJba7cU.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\lenovo\AppData\Local\Temp/ccJba7cU.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\lenovo\AppData\Local\Temp/ccJba7cU.s:18     .text:00000000 itoa
+C:\Users\lenovo\AppData\Local\Temp/ccJba7cU.s:152    .text:0000009e atoi
+C:\Users\lenovo\AppData\Local\Temp/ccJba7cU.s:243    .text:000000fe USB_putsTX
+C:\Users\lenovo\AppData\Local\Temp/ccJba7cU.s:276    .text:0000011c USB_TX
+C:\Users\lenovo\AppData\Local\Temp/ccJba7cU.s:294    .text:00000126 updateUSB
+C:\Users\lenovo\AppData\Local\Temp/ccJba7cU.s:308    .text:0000012c USB_Rx
+C:\Users\lenovo\AppData\Local\Temp/ccJba7cU.s:352    .text:00000164 USB_getsRX
 
 UNDEFINED SYMBOLS
 __udivmodhi4

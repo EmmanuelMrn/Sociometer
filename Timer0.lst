@@ -27,7 +27,7 @@
   35 0010 85BD      		out 69-32,r24
   36               	.LM7:
   37               	/* #APP */
-  38               	 ;  14 "Timer0.c" 1
+  38               	 ;  16 "Timer0.c" 1
   39 0012 7894      		sei
   40               	 ;  0 "" 2
   41               	/* epilogue start */
@@ -59,11 +59,11 @@
   69               	/* prologue: Signal */
   70               	/* frame size = 0 */
   71               	.LM10:
-  72 0038 8091 0000 		lds r24,mSecCnt.1235
-  73 003c 9091 0000 		lds r25,(mSecCnt.1235)+1
+  72 0038 8091 0000 		lds r24,mSecCnt.1238
+  73 003c 9091 0000 		lds r25,(mSecCnt.1238)+1
   74 0040 0196      		adiw r24,1
-  75 0042 9093 0000 		sts (mSecCnt.1235)+1,r25
-  76 0046 8093 0000 		sts mSecCnt.1235,r24
+  75 0042 9093 0000 		sts (mSecCnt.1238)+1,r25
+  76 0046 8093 0000 		sts mSecCnt.1238,r24
   77               	.LM11:
   78 004a 885E      		subi r24,lo8(1000)
   79 004c 9340      		sbci r25,hi8(1000)
@@ -71,8 +71,8 @@
   81               	.LM12:
   82 0050 0E94 0000 		call Clock_Update
   83               	.LM13:
-  84 0054 1092 0000 		sts (mSecCnt.1235)+1,__zero_reg__
-  85 0058 1092 0000 		sts mSecCnt.1235,__zero_reg__
+  84 0054 1092 0000 		sts (mSecCnt.1238)+1,__zero_reg__
+  85 0058 1092 0000 		sts mSecCnt.1238,__zero_reg__
   86               	.LM14:
   87 005c 0E94 0000 		call Clock_Display
   88               	.L5:
@@ -96,19 +96,19 @@
  106 007e 1F90      		pop __zero_reg__
  107 0080 1895      		reti
  108               	.LFE3:
- 110               		.lcomm mSecCnt.1235,2
+ 110               		.lcomm mSecCnt.1238,2
  143               	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:00000000 Timer0.c
-C:\Users\lenovo\AppData\Local\Temp/ccwjlqVe.s:2      *ABS*:0000003f __SREG__
-C:\Users\lenovo\AppData\Local\Temp/ccwjlqVe.s:3      *ABS*:0000003e __SP_H__
-C:\Users\lenovo\AppData\Local\Temp/ccwjlqVe.s:4      *ABS*:0000003d __SP_L__
-C:\Users\lenovo\AppData\Local\Temp/ccwjlqVe.s:5      *ABS*:00000034 __CCP__
-C:\Users\lenovo\AppData\Local\Temp/ccwjlqVe.s:6      *ABS*:00000000 __tmp_reg__
-C:\Users\lenovo\AppData\Local\Temp/ccwjlqVe.s:7      *ABS*:00000001 __zero_reg__
-C:\Users\lenovo\AppData\Local\Temp/ccwjlqVe.s:18     .text:00000000 Timer0_Init
-C:\Users\lenovo\AppData\Local\Temp/ccwjlqVe.s:49     .text:00000016 __vector_21
-                             .bss:00000000 mSecCnt.1235
+C:\Users\lenovo\AppData\Local\Temp/cclDFrci.s:2      *ABS*:0000003f __SREG__
+C:\Users\lenovo\AppData\Local\Temp/cclDFrci.s:3      *ABS*:0000003e __SP_H__
+C:\Users\lenovo\AppData\Local\Temp/cclDFrci.s:4      *ABS*:0000003d __SP_L__
+C:\Users\lenovo\AppData\Local\Temp/cclDFrci.s:5      *ABS*:00000034 __CCP__
+C:\Users\lenovo\AppData\Local\Temp/cclDFrci.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\lenovo\AppData\Local\Temp/cclDFrci.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\lenovo\AppData\Local\Temp/cclDFrci.s:18     .text:00000000 Timer0_Init
+C:\Users\lenovo\AppData\Local\Temp/cclDFrci.s:49     .text:00000016 __vector_21
+                             .bss:00000000 mSecCnt.1238
 
 UNDEFINED SYMBOLS
 Clock_Update

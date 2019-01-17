@@ -1,0 +1,1 @@
+comparador.o: comparador.c
